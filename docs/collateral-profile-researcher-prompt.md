@@ -32,9 +32,15 @@ Research instructions:
 5. Summarize redemption / exit characteristics in plain language.
    - Do not force a rigid structure.
    - Mention KYC, business-day delays, issuer redemption, offchain processes, lockups, or instant onchain exit only if supported by sources.
-6. Add short notes that would help a human reviewing the collateral.
-7. Never invent facts.
-8. If something is unknown, use `null`.
+6. Assign a `rank` from 1 to 5 as a quick reviewer score.
+   - `1` = very weak / avoid
+   - `2` = concerning / many caveats
+   - `3` = mixed / acceptable with caveats
+   - `4` = solid / understandable structure
+   - `5` = very strong / simple and transparent
+7. Add short notes that would help a human reviewing the collateral.
+8. Never invent facts.
+9. If something is unknown, use `null`.
 
 Return JSON only.
 
@@ -50,6 +56,7 @@ Use this schema:
   "type": "other",
   "protocol": "Protocol Name",
   "protocolUrl": "https://defillama.com/protocol/...",
+  "rank": 3,
   "redeem": "Plain-English redemption / exit summary.",
   "notes": "Short extra notes for reviewers.",
   "sources": [
@@ -61,8 +68,7 @@ Use this schema:
       "label": "Docs",
       "url": "https://..."
     }
-  ],
-  "confidence": "low"
+  ]
 }
 ```
 
@@ -71,7 +77,7 @@ Rules:
 - Use lowercase hex address
 - Use `null` for unknown values
 - Include at least 2 sources when possible
-- `confidence` must be one of: `low`, `medium`, `high`
+- `rank` must be an integer from `1` to `5`
 - Keep `redeem` concise but informative
 - Keep `notes` short and review-oriented
 
@@ -79,5 +85,6 @@ Validation checklist before replying:
 - Is the protocol correctly identified?
 - Does the protocol URL point to DefiLlama when available?
 - Is the `type` a simple human-usable label?
+- Does `rank` roughly match the collateral's transparency and exit clarity?
 - Does `redeem` describe the real exit path without over-claiming?
 - Are uncertain facts represented as `null` or clearly softened?

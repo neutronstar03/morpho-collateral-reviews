@@ -58,6 +58,7 @@ Each file should look like this:
   "type": "other",
   "protocol": "Protocol Name",
   "protocolUrl": "https://defillama.com/protocol/...",
+  "rank": 3,
   "redeem": "Plain-English redemption / exit summary.",
   "notes": "Short extra notes for reviewers.",
   "sources": [
@@ -65,10 +66,35 @@ Each file should look like this:
       "label": "Official site",
       "url": "https://..."
     }
-  ],
-  "confidence": "low"
+  ]
 }
 ```
+
+### Field notes
+
+- `version`: current schema version. Start with `1`.
+- `chainId`: EVM chain ID for the reviewed collateral.
+- `collateralAddress`: lowercase onchain token address.
+- `symbol`: common market symbol.
+- `name`: token or wrapper name.
+- `type`: short human-readable category such as `bond`, `vault`, `lp token`, `wrapped asset`, `stablecoin`, `rwa`, or `other`.
+- `protocol`: main protocol, issuer, or product name behind the collateral.
+- `protocolUrl`: preferably the best matching DefiLlama protocol page; if there is no good DefiLlama page, use the most useful official URL.
+- `rank`: quick reviewer score from `1` to `5`.
+  - `1`: very weak / avoid
+  - `2`: concerning / many caveats
+  - `3`: mixed / acceptable with caveats
+  - `4`: solid / understandable structure
+  - `5`: very strong / simple and transparent
+- `redeem`: plain-English description of the real exit path. This can mention KYC, offchain redemption, business-day settlement, maturity constraints, or instant onchain exit when supported by sources.
+- `notes`: extra reviewer context that does not fit elsewhere. Keep it short and useful.
+- `sources`: links that justify the entry. Prefer official sources first.
+
+Notes on scoring:
+
+- `rank` is a human review signal, not a formal solvency proof.
+- `rank` should summarize overall comfort with the collateral structure and redeemability.
+- exact scoring guidelines can evolve later; consistency matters more than precision in v1.
 
 ## Research prompt
 
