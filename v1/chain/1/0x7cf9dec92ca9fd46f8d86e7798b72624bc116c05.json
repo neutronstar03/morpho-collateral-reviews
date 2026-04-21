@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x7cf9dec92ca9fd46f8d86e7798b72624bc116c05",
+  "symbol": "mAPOLLO",
+  "name": "Midas Apollo Crypto",
+  "type": "delta neutral strategy",
+  "protocol": "Midas RWA",
+  "protocolUrl": "https://defillama.com/protocol/midas-rwa",
+  "rank": 3,
+  "redeem": "NAV-based Midas token. Midas docs describe two exit paths: standard redemption is free but settles on the product's next NAV cycle and can take days or longer depending on the strategy; instant redemption can return stablecoins onchain immediately, but depends on available liquidity and charges a fee. Midas also states some products may require wallet screening or whitelisting for direct subscribe/redeem flows.",
+  "notes": "Tracks selected market-neutral stablecoin strategies monitored by Apollo Crypto as risk manager. Not a stablecoin; value follows portfolio NAV. Contract is upgradeable and direct redemption relies on Midas operational/oracle processes.",
+  "sources": [
+    {
+      "label": "Official product page",
+      "url": "https://midas.app/mapollo"
+    },
+    {
+      "label": "Midas docs - legal product documentation",
+      "url": "https://docs.midas.app/resources/legal-product-documentation/mapollo"
+    },
+    {
+      "label": "Midas docs - liquidity and redemption architecture",
+      "url": "https://docs.midas.app/liquidity-and-composability/open-liquidity-architecture"
+    },
+    {
+      "label": "Etherscan token page",
+      "url": "https://etherscan.io/token/0x7cf9dec92ca9fd46f8d86e7798b72624bc116c05"
+    }
+  ]
+}

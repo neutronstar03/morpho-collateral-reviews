@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x890a5122aa1da30fec4286de7904ff808f0bd74a",
+  "symbol": "msY",
+  "name": "msY",
+  "type": "delta neutral strategy",
+  "protocol": "Main Street",
+  "protocolUrl": "https://defillama.com/protocol/mainstreet",
+  "rank": 3,
+  "redeem": "msY is Main Street's strategy/staking token for its options box spread vault. The clearest documented direct redemption path is for msUSD, not msY: verified users can redeem msUSD for USDC, with a stated 7-day cooldown and capacity controls. Main Street says msY's redemption value depends on the vault coverage ratio and insurance fund, so exit clarity is weaker than a simple onchain wrapper; secondary-market sale may be the fastest path.",
+  "notes": "Strategy is understandable but structurally complex and partly offchain. Docs highlight Deribit/exchange risk, redemption gating, and coverage-ratio dependence for msY.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://mainstreet.finance/"
+    },
+    {
+      "label": "Docs - Welcome",
+      "url": "https://mainstreet-finance.gitbook.io/mainstreet.finance/readme.md"
+    },
+    {
+      "label": "Docs - msY options box spread",
+      "url": "https://mainstreet-finance.gitbook.io/mainstreet.finance/msusd-and-strategy-vaults/strategy-vaults/msy-the-options-box-spread.md"
+    },
+    {
+      "label": "Docs - Redemption process",
+      "url": "https://mainstreet-finance.gitbook.io/mainstreet.finance/msusd-and-strategy-vaults/redemption-process.md"
+    },
+    {
+      "label": "Docs - Insurance fund",
+      "url": "https://mainstreet-finance.gitbook.io/mainstreet.finance/risk-factors/insurance-fund.md"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/mainstreet"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x4926f23927fbabe8580c183e07e34d4b147eafc0",
+  "symbol": "stakedao-av/frxUSD",
+  "name": "Stake DAO avUSD/frxUSD",
+  "type": "staking receipt",
+  "protocol": "Stake DAO",
+  "protocolUrl": "https://defillama.com/protocol/stake-dao",
+  "rank": 4,
+  "redeem": "This is a non-transferable Stake DAO lending wrapper for the Stake DAO avUSD/frxUSD vault. To exit, the borrower repays debt (if any) and withdraws; the wrapper burns and returns Stake DAO vault shares, which can then be redeemed for the underlying avUSD/frxUSD Curve LP position. Stake DAO says there is no lockup, but withdrawals are still subject to lending health checks and oracle availability.",
+  "notes": "Market-specific Morpho collateral wrapper. Backed 1:1 by Stake DAO RewardVault shares; underlying vault asset is the avUSD/frxUSD Curve LP token. Non-transferable by design, so review liquidity at the vault/LP layer rather than the wrapper token itself.",
+  "sources": [
+    {
+      "label": "Stake DAO docs - How Lending Works",
+      "url": "https://docs.stakedao.org/lending/how-it-works"
+    },
+    {
+      "label": "Stake DAO docs - Lending FAQ",
+      "url": "https://docs.stakedao.org/lending/faq"
+    },
+    {
+      "label": "Stake DAO official site",
+      "url": "https://www.stakedao.org/"
+    },
+    {
+      "label": "Curve pool asset",
+      "url": "https://curve.fi/#/ethereum/pools/factory-stable-ng-297/deposit"
+    }
+  ]
+}

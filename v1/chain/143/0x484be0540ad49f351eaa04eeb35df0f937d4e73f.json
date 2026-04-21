@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 143,
+  "collateralAddress": "0x484be0540ad49f351eaa04eeb35df0f937d4e73f",
+  "symbol": "syzUSD",
+  "name": "Staked Yuzu USD",
+  "type": "vault",
+  "protocol": "Yuzu Money",
+  "protocolUrl": "https://defillama.com/protocol/yuzu-money",
+  "rank": 2,
+  "redeem": "syzUSD can be unstaked back to yzUSD in a one-step process that Yuzu says completes almost instantly. Redeeming yzUSD through Yuzu's primary mint/redeem flow is limited to eligible investors who pass KYC/KYB/AML and related checks, so other holders may need to rely on secondary-market liquidity.",
+  "notes": "ERC-4626 wrapper for staked yzUSD. Yuzu describes yzUSD as an overcollateralized senior tranche backed by curated onchain strategies, with yzPP as first-loss support and a reserve fund.",
+  "sources": [
+    {
+      "label": "Yuzu Money site",
+      "url": "https://yuzu.money/"
+    },
+    {
+      "label": "Yuzu docs - Staked yzUSD (syzUSD)",
+      "url": "https://yuzu-money.gitbook.io/yuzu-money/yuzu-alpha/staked-yzusd-syzusd.md"
+    },
+    {
+      "label": "Yuzu docs - Mint & Redeem",
+      "url": "https://yuzu-money.gitbook.io/yuzu-money/yuzu-alpha/mint-and-redeem.md"
+    },
+    {
+      "label": "Yuzu docs - Key Addresses",
+      "url": "https://yuzu-money.gitbook.io/yuzu-money/yuzu-alpha/key-addresses.md"
+    },
+    {
+      "label": "DefiLlama - Yuzu Money",
+      "url": "https://defillama.com/protocol/yuzu-money"
+    }
+  ]
+}

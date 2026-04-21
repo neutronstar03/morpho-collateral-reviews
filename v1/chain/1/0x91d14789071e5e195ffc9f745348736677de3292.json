@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x91d14789071e5e195ffc9f745348736677de3292",
+  "symbol": "dCOMP",
+  "name": "dCOMP",
+  "type": "wrapped asset",
+  "protocol": "API3 DAO",
+  "protocolUrl": "https://defillama.com/protocol/api3",
+  "rank": 4,
+  "redeem": "dCOMP is a 1:1 wrapper around COMP. Holders can unwrap dCOMP back into COMP onchain via the contract withdraw function. Minting/wrapping is restricted to whitelisted depositors, but the contract source states withdrawals are not restricted by that whitelist.",
+  "notes": "Transparent wrapper structure with clear 1:1 backing to COMP. Main caveats are owner-controlled depositor whitelist and delegated COMP voting power managed by the wrapper.",
+  "sources": [
+    {
+      "label": "Etherscan contract",
+      "url": "https://etherscan.io/address/0x91d14789071e5e195ffc9f745348736677de3292#code"
+    },
+    {
+      "label": "API3 dCOMP README",
+      "url": "https://github.com/api3dao/dcomp"
+    },
+    {
+      "label": "API3 dCOMP deposit and unwrap guide",
+      "url": "https://github.com/api3dao/dcomp/blob/main/deposit.md"
+    }
+  ]
+}

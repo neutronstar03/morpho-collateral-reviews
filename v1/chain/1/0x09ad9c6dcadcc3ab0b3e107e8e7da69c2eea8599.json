@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x09ad9c6dcadcc3ab0b3e107e8e7da69c2eea8599",
+  "symbol": "muBOND",
+  "name": "mu Bond",
+  "type": "rwa",
+  "protocol": "Mu Digital",
+  "protocolUrl": "https://defillama.com/protocol/mu-digital",
+  "rank": 2,
+  "redeem": "Direct redemption is available only to approved KYC-cleared counterparties and normally enters a redemption queue tied to a weekly liquidity schedule; Mu Digital says to expect about 7 calendar days, though small amounts may redeem faster from an onchain liquidity buffer. Users may also exit permissionlessly via supported onchain swaps if liquidity is available.",
+  "notes": "Junior first-loss tranche of Mu Digital's Asia credit portfolio. NAV/repricing is published periodically and docs say the price feed is initially updated manually from offchain sources.",
+  "sources": [
+    {
+      "label": "Mu Digital website",
+      "url": "https://mudigital.net/"
+    },
+    {
+      "label": "Mu Digital docs - muBOND",
+      "url": "https://docs.mudigital.net/protocol-overview/mubond.md"
+    },
+    {
+      "label": "Mu Digital docs - muBOND mint/redeem",
+      "url": "https://docs.mudigital.net/protocol-overview/mubond/mint-redeem.md"
+    },
+    {
+      "label": "DefiLlama - Mu Digital",
+      "url": "https://defillama.com/protocol/mu-digital"
+    }
+  ]
+}

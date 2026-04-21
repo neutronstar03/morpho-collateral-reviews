@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 747474,
+  "collateralAddress": "0x68943c066747690ecdaeb027fa722b090ee6f92d",
+  "symbol": "siUSD",
+  "name": "Staked InfiniFi USD",
+  "type": "staking receipt",
+  "protocol": "infiniFi",
+  "protocolUrl": "https://defillama.com/protocol/infinifi",
+  "rank": 2,
+  "redeem": "siUSD is a staked receipt token for InfiniFi's iUSD. On Katana, this contract is a LayerZero OFT representation, so the practical exit path appears to be bridging back to InfiniFi's main deployment, unstaking to iUSD, then redeeming. InfiniFi redemptions are liquidity-dependent: they can be immediate when liquid assets are available, otherwise the request is queued.",
+  "notes": "More complex than a plain stablecoin: ERC-4626 staking wrapper over iUSD, plus cross-chain OFT transport on Katana. Reviewers should be comfortable with bridge, staking-vault, and redemption-queue risk.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://infinifi.xyz"
+    },
+    {
+      "label": "Official docs hub",
+      "url": "https://docs.infinifi.xyz"
+    },
+    {
+      "label": "Official protocol repository",
+      "url": "https://github.com/InfiniFi-Labs/infinifi-protocol/blob/master/README.md"
+    },
+    {
+      "label": "Katana verified contract",
+      "url": "https://katanascan.com/address/0x68943c066747690ecDAEB027fa722B090ee6F92D"
+    }
+  ]
+}

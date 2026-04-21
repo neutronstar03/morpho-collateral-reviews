@@ -2,6 +2,14 @@
 
 Use this prompt with another agent when you want a first-pass collateral profile for a token.
 
+Add at the bottom available tools, suggested ones:
+```text
+Additional tools at your disposal:
+- Bun
+- gh, github cli
+- cast, foundry cli
+```
+
 ---
 
 ## Prompt
