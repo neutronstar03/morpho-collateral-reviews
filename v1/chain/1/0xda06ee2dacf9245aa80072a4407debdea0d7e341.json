@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xda06ee2dacf9245aa80072a4407debdea0d7e341",
+  "symbol": "savETH",
+  "name": "Staked avETH",
+  "type": "staking receipt",
+  "protocol": "Avant Protocol",
+  "protocolUrl": "https://defillama.com/protocol/avant-aveth",
+  "rank": 2,
+  "redeem": "savETH is the staked senior-tranche form of avETH. To exit through the protocol, holders unstake to avETH with a 1-day cooldown and no yield during cooldown, then avETH itself may need a separate redemption flow that Avant says is often completed within hours but can take up to 7 days depending on liquidity. Avant also notes large redemption waves can add delays.",
+  "notes": "Not a simple idle ETH wrapper. Avant’s avETH-suite transparency page showed active deployment rather than passive custody. Asset mix snapshot dated 2026-04-01: weETH 50.60%, ETH 31.36%, WETH 18.04%. Deployment/location snapshot dated 2026-04-01: Morpho 50.68%, Aave 25.49%, Avant 12.58%, Dolomite 9.66%, Euler 1.60%, pending deployment 2.15%. This adds external protocol and strategy risk even though savETH is the senior tranche.",
+  "sources": [
+    {
+      "label": "Avant Protocol site",
+      "url": "https://avantprotocol.com"
+    },
+    {
+      "label": "Avant docs - Core Tokens",
+      "url": "https://docs.avantprotocol.com/overview/core-tokens"
+    },
+    {
+      "label": "Avant docs - Using Avant Protocol",
+      "url": "https://docs.avantprotocol.com/overview/using-avant-protocol"
+    },
+    {
+      "label": "Avant docs - Yield Generation",
+      "url": "https://docs.avantprotocol.com/yield-strategies-and-revenue/yield-generation"
+    },
+    {
+      "label": "Avant docs - Risks",
+      "url": "https://docs.avantprotocol.com/legal-and-risk/risks"
+    },
+    {
+      "label": "Avant docs - Strategy Addresses",
+      "url": "https://docs.avantprotocol.com/yield-strategies-and-revenue/strategy-addresses"
+    },
+    {
+      "label": "Avant Transparency",
+      "url": "https://app.avantprotocol.com/transparency?product=aveth"
+    },
+    {
+      "label": "DefiLlama - Avant avETH",
+      "url": "https://defillama.com/protocol/avant-aveth"
+    },
+    {
+      "label": "Etherscan - savETH contract",
+      "url": "https://etherscan.io/address/0xda06ee2dacf9245aa80072a4407debdea0d7e341"
+    }
+  ]
+}
