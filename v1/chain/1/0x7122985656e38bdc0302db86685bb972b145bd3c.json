@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x7122985656e38bdc0302db86685bb972b145bd3c",
+  "symbol": "STONE",
+  "name": "StakeStone Ether",
+  "type": "staking receipt",
+  "protocol": "StakeStone",
+  "protocolUrl": "https://defillama.com/protocol/stakestone",
+  "rank": 4,
+  "redeem": "STONE can be redeemed for ETH through StakeStone at the contract exchange rate. Instant withdrawal is available only when the ETH buffer has liquidity; otherwise users request withdrawal and wait while underlying restaking positions are unstaked and settled.",
+  "notes": "Non-rebase yield-bearing ETH token and LayerZero OFT. Exit clarity is good, but instant liquidity depends on buffer availability and underlying strategies can change.",
+  "sources": [
+    {
+      "label": "StakeStone docs - How It Works",
+      "url": "https://docs.stakestone.io/stakestone/stone-eth/how-it-works.md"
+    },
+    {
+      "label": "StakeStone docs - Unstake & Omnichain Withdrawal",
+      "url": "https://docs.stakestone.io/stakestone/stone-eth/how-it-works/unstake-and-omnichain-withdrawal.md"
+    },
+    {
+      "label": "StakeStone docs - Pricing",
+      "url": "https://docs.stakestone.io/stakestone/stone-eth/how-it-works/pricing.md"
+    },
+    {
+      "label": "DefiLlama - StakeStone",
+      "url": "https://defillama.com/protocol/stakestone"
+    }
+  ]
+}

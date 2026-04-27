@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x97ad75064b20fb2b2447fed4fa953bf7f007a706",
+  "symbol": "beraSTONE",
+  "name": "Berachain STONE",
+  "type": "vault",
+  "protocol": "StakeStone",
+  "protocolUrl": "https://defillama.com/protocol/stakestone",
+  "rank": 2,
+  "redeem": "beraSTONE is the LP/share token for StakeStone's Berachain Vault. The vault contract exposes request/claim redemption functions and uses STONE as the withdraw token; the app also shows secondary-market swap and STONE-to-ETH redemption options. A fixed redemption delay was not found.",
+  "notes": "Vault was created for Berachain/Boyco exposure and incentives; app shows Royco allocation and deposits currently paused. More complex and campaign-dependent than plain STONE.",
+  "sources": [
+    {
+      "label": "StakeStone Berachain Vault app",
+      "url": "https://app.stakestone.io/u/vault/detail/bera"
+    },
+    {
+      "label": "Etherscan - Berachain Vault contract",
+      "url": "https://etherscan.io/address/0x8f88aE3798E8fF3D0e0DE7465A0863C9bbB577f0"
+    },
+    {
+      "label": "Etherscan - beraSTONE token",
+      "url": "https://etherscan.io/token/0x97Ad75064b20fb2B2447feD4fa953bF7F007a706"
+    },
+    {
+      "label": "DefiLlama - StakeStone",
+      "url": "https://defillama.com/protocol/stakestone"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xfb0a3cf9b019bfd8827443d131b235b3e0fc58d2",
+  "symbol": "ARM-WETH-eETH",
+  "name": "Ether.fi ARM",
+  "type": "vault",
+  "protocol": "Origin ARM",
+  "protocolUrl": "https://defillama.com/protocol/origin-arm",
+  "rank": 3,
+  "redeem": "ARM shares exit through a two-step onchain redemption: requestRedeem, then claimRedeem when claimable. If vault liquidity is available, claims may be available after a 10 minute delay; otherwise redemptions remain pending until liquidity returns. Large withdrawals can take 7-15 days because eETH is redeemed through Ether.fi's asynchronous unstaking process.",
+  "notes": "Non-rebasing vault share token for Origin's eETH/WETH ARM. Strategy buys discounted eETH, redeems via Ether.fi, and routes idle WETH to Morpho. Use onchain share conversion for valuation; not 1:1 with ETH.",
+  "sources": [
+    {
+      "label": "Origin docs - eETH ARM",
+      "url": "https://docs.originprotocol.com/automated-redemption-manager-arm/eeth-arm.md"
+    },
+    {
+      "label": "Origin docs - ARM integrations",
+      "url": "https://docs.originprotocol.com/resources/guides/arm-integrations.md"
+    },
+    {
+      "label": "Origin docs - EtherFi eETH/WETH registry",
+      "url": "https://docs.originprotocol.com/registry/contracts/arm-registry/etherfi-eeth-weth.md"
+    },
+    {
+      "label": "Etherscan token page",
+      "url": "https://etherscan.io/token/0xfb0a3cf9b019bfd8827443d131b235b3e0fc58d2"
+    }
+  ]
+}

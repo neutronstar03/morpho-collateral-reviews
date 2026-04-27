@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xe1b4d34e8754600962cd944b535180bd758e6c2e",
+  "symbol": "agETH",
+  "name": "Kelp Gain",
+  "type": "vault",
+  "protocol": "Gain",
+  "protocolUrl": "https://defillama.com/protocol/gain",
+  "rank": 2,
+  "redeem": "agETH is the ERC-20 receipt token for Kelp's Airdrop Gain ERC-4626 vault. Official docs say users withdraw through the Gain dApp and receive rsETH, with withdrawal/claim taking about 2-4 days.",
+  "notes": "Vault deposits ETH, stETH, ETHx, or rsETH and uses assets for L2 airdrop and DeFi strategies. Exit is documented but not instant, and strategy complexity is higher than a simple wrapped asset.",
+  "sources": [
+    {
+      "label": "Official docs - Airdrop Gain",
+      "url": "https://kerneldao.gitbook.io/kernel/getting-started/gain/airdrop-gain.md"
+    },
+    {
+      "label": "Official docs - Airdrop Gain FAQs",
+      "url": "https://kerneldao.gitbook.io/kernel/getting-started/gain/airdrop-gain/faqs.md"
+    },
+    {
+      "label": "Official docs - agETH incentives",
+      "url": "https://kerneldao.gitbook.io/kernel/getting-started/gain/airdrop-gain/incentives-with-ageth.md"
+    },
+    {
+      "label": "DefiLlama - Gain",
+      "url": "https://defillama.com/protocol/gain"
+    },
+    {
+      "label": "Etherscan token contract",
+      "url": "https://etherscan.io/address/0xe1b4d34e8754600962cd944b535180bd758e6c2e"
+    }
+  ]
+}
