@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+  "symbol": "pufETH",
+  "name": "pufETH",
+  "type": "staking receipt",
+  "protocol": "Puffer Finance",
+  "protocolUrl": "https://defillama.com/protocol/puffer-finance",
+  "rank": 4,
+  "redeem": "pufETH can be withdrawn through Puffer into WETH. Puffer documents an instant 1-step withdrawal using its liquidity vault with a 1% fee, or a fee-free 2-step standard withdrawal that may take around 14 days if validator or EigenLayer withdrawal processes are needed.",
+  "notes": "Native liquid restaking token for ETH deposited into Puffer; exposure includes Ethereum staking plus EigenLayer/restaking mechanics and related smart-contract/slashing complexity.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://www.puffer.fi/"
+    },
+    {
+      "label": "Puffer docs - introduction",
+      "url": "https://docs.puffer.fi/yield/intro"
+    },
+    {
+      "label": "Puffer docs - withdraw",
+      "url": "https://docs.puffer.fi/yield/stakers/withdraw"
+    },
+    {
+      "label": "DefiLlama - Puffer Finance",
+      "url": "https://defillama.com/protocol/puffer-finance"
+    }
+  ]
+}
