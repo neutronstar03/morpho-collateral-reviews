@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x5a42864b14c0c8241ef5ab62dae975b163a2e0c1",
+  "symbol": "mHyperETH",
+  "name": "Midas Hyperithm ETH",
+  "type": "delta neutral strategy",
+  "protocol": "Midas RWA",
+  "protocolUrl": "https://defillama.com/protocol/midas-rwa",
+  "rank": 2,
+  "redeem": "Open-ended tokenized debt security. Redemption may be requested at any time via a Tokenholder Redemption Request Form, subject to onboarding/KYC, with redemption value based on best-efforts liquidation of the underlying strategy and paid in wETH after fees. OTC/secondary exits may depend on market liquidity.",
+  "notes": "Underlying is a crypto-denominated market-neutral yield strategy using spot, lending, arbitrage, derivatives, and token rewards. Official KID classifies risk as 7/7 and notes issuer/strategy/liquidity risks and no capital protection.",
+  "sources": [
+    {
+      "label": "Midas mHyperETH legal documentation",
+      "url": "https://docs.midas.app/resources/legal-product-documentation/mhypereth"
+    },
+    {
+      "label": "mHyperETH Key Information Document",
+      "url": "https://content.gitbook.com/content/MndxFHqGeA4nzBBeKDTV/blobs/x4F5zQjXs1xxtnQtn6YA/KID_mHyperETH.pdf"
+    },
+    {
+      "label": "mHyperETH Final Terms",
+      "url": "https://content.gitbook.com/content/MndxFHqGeA4nzBBeKDTV/blobs/Vx35dunrKAWi1fKS8cmw/Midas_Final_Terms_mHyperETH_2025.pdf"
+    },
+    {
+      "label": "DefiLlama Midas RWA",
+      "url": "https://defillama.com/protocol/midas-rwa"
+    }
+  ]
+}

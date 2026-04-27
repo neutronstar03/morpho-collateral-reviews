@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "chainId": 8453,
+  "collateralAddress": "0x70654aad8b7734dc319d0c3608ec7b32e03fa162",
+  "symbol": "satUSD",
+  "name": "Satoshi Stablecoin V2",
+  "type": "stablecoin",
+  "protocol": "River Omni-CDP",
+  "protocolUrl": "https://defillama.com/protocol/river-omni-cdp",
+  "rank": 3,
+  "redeem": "satUSD is documented as redeemable through River for $1 worth of collateral when the system TCR is above 110%; redemptions target the lowest-collateralized positions first and include a dynamic fee of baseRate + 0.5%. Users may also exit through available DEX or stablecoin swap liquidity; docs mention a 3-day withdrawal lockup for satUSD-to-USDT/USDC swaps, but no KYC requirement is documented.",
+  "bridging": "satUSD uses LayerZero OFT for native cross-chain transfers, described by River as slippage-free and without third-party bridge wrappers. River docs separately indicate current bridge support for BEVM, BOB, BSquared, and Bitlayer, while satUSD contracts are deployed on more networks.",
+  "supportedNetworks": [
+    "Ethereum",
+    "BNB Chain",
+    "X Layer",
+    "Base",
+    "Arbitrum",
+    "Sonic",
+    "BOB",
+    "BSquared",
+    "Hemi",
+    "BEVM",
+    "Bitlayer"
+  ],
+  "bridgeSupportedNetworks": [
+    "BEVM",
+    "BOB",
+    "BSquared",
+    "Bitlayer"
+  ],
+  "notes": "Over-collateralized omnichain CDP stablecoin backed by BTC, ETH, BNB and LST collateral. Exit mechanics are documented, but rely on protocol health, available liquidity, and a relatively complex cross-chain system.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://www.river.inc/"
+    },
+    {
+      "label": "Official docs",
+      "url": "https://docs.river.inc/"
+    },
+    {
+      "label": "Deployed contracts",
+      "url": "https://docs.river.inc/outro/deployed-contracts"
+    },
+    {
+      "label": "Bridge satUSD docs",
+      "url": "https://docs.river.inc/how-to-use/omni-cdp/bridge-satusd"
+    },
+    {
+      "label": "Redemption docs",
+      "url": "https://docs.river.inc/products/editor/redemption"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/river-omni-cdp"
+    },
+    {
+      "label": "BaseScan token",
+      "url": "https://basescan.org/token/0x70654AaD8B7734dc319d0C3608ec7B32e03FA162"
+    }
+  ]
+}

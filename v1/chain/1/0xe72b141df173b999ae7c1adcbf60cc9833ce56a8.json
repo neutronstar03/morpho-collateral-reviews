@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xe72b141df173b999ae7c1adcbf60cc9833ce56a8",
+  "symbol": "ETH+",
+  "name": "ETHPlus",
+  "type": "vault",
+  "protocol": "Reserve Protocol",
+  "protocolUrl": "https://defillama.com/protocol/reserve-protocol",
+  "rank": 4,
+  "redeem": "ETH+ is a Reserve Yield DTF/RToken that can be redeemed permissionlessly onchain for its underlying ETH-pegged collateral basket. The Reserve app also offers zapper exits into ETH or other ERC-20s, subject to swap liquidity and slippage.",
+  "notes": "Diversified liquid-staking ETH basket; official app shows collateral exposure to wstETH, weETH, rETH, sfrxETH, and ETHx. Structure is transparent and onchain, but collateral, oracle, governance, and LST depeg risks remain.",
+  "sources": [
+    {
+      "label": "Reserve app ETH+ page",
+      "url": "https://app.reserve.org/ethereum/token/0xe72b141df173b999ae7c1adcbf60cc9833ce56a8/overview"
+    },
+    {
+      "label": "Reserve docs - Yield DTF overview",
+      "url": "https://docs.reserve.org/core-components/yield-dtfs/overview.md"
+    },
+    {
+      "label": "Reserve docs - Minting and redeeming",
+      "url": "https://docs.reserve.org/core-components/yield-dtfs/minting-and-redeeming.md"
+    },
+    {
+      "label": "DefiLlama - Reserve Protocol",
+      "url": "https://defillama.com/protocol/reserve-protocol"
+    }
+  ]
+}

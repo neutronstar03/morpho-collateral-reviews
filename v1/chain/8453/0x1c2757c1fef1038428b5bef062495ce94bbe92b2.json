@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 8453,
+  "collateralAddress": "0x1c2757c1fef1038428b5bef062495ce94bbe92b2",
+  "symbol": "mBASIS",
+  "name": "Midas Basis Trading Token",
+  "type": "delta neutral strategy",
+  "protocol": "Midas",
+  "protocolUrl": "https://defillama.com/protocol/midas-rwa",
+  "rank": 3,
+  "redeem": "Exit is via Midas redemption vaults or secondary liquidity where available. Midas contracts support instant onchain redemption when liquidity, limits, and minimums allow, or request-based redemption where an admin fulfills after offchain processing; token/vault access can be affected by blacklist, greenlist, sanctions, and pause controls.",
+  "notes": "Dollar-denominated ERC-20 tied to a delta-neutral basis trading strategy. Collateral review should account for managed/offchain strategy risk, permissioned mint/burn, upgradeability, manual price feeds, and admin controls.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://midas.app/"
+    },
+    {
+      "label": "Official contracts repository",
+      "url": "https://github.com/midas-apps/contracts"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/midas-rwa"
+    },
+    {
+      "label": "BaseScan token",
+      "url": "https://basescan.org/token/0x1C2757c1FeF1038428b5bEF062495ce94BBe92b2"
+    },
+    {
+      "label": "mBASIS strategy summary",
+      "url": "https://coinengineer.net/blog/midas-launches-new-yield-token-mbasis-to-compete-with-ethena/"
+    }
+  ]
+}
