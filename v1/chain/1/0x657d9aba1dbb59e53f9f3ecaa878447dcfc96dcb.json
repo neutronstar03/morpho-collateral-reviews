@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x657d9aba1dbb59e53f9f3ecaa878447dcfc96dcb",
+  "symbol": "ynETHx",
+  "name": "ynETH MAX",
+  "type": "vault",
+  "protocol": "YieldNest",
+  "protocolUrl": "https://defillama.com/protocol/yieldnest",
+  "rank": 3,
+  "redeem": "ynETHx can be redeemed for ETH through a dedicated withdrawal buffer; under normal conditions withdrawals are instant and first-come, first-served. If the buffer is depleted, withdrawals pause until rebalancing refills it, which docs say can take about 1-10 days; users may alternatively exit through secondary-market swaps.",
+  "notes": "ERC-4626 ETH-based MAX LRT with WETH as primary underlying asset and exposure to ynETH, ynLSDe, ETH, and WETH. Strategy allocation is DAO/subDAO managed and more complex than a simple staking receipt.",
+  "sources": [
+    {
+      "label": "YieldNest docs - ynETH MAX",
+      "url": "https://docs.yieldnest.finance/protocol-design/max-vaults/yneth-max-ynethx"
+    },
+    {
+      "label": "YieldNest docs - MAX Vaults",
+      "url": "https://docs.yieldnest.finance/protocol-design/max-vaults"
+    },
+    {
+      "label": "DefiLlama - YieldNest",
+      "url": "https://defillama.com/protocol/yieldnest"
+    }
+  ]
+}
