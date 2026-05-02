@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x92a6a01b07984de46c24e8eba248449beb8b1dcb",
+  "symbol": "PT-apxUSD-18JUN2026",
+  "name": "PT apxUSD 18JUN2026",
+  "type": "bond",
+  "protocol": "Pendle / Apyx Protocol",
+  "protocolUrl": "https://defillama.com/protocol/pendle",
+  "rank": 2,
+  "redeem": "Pendle PT represents the principal portion of apxUSD and is designed to redeem at maturity, 18 Jun 2026, for the accounting asset, apxUSD. Before maturity, exit depends on secondary-market liquidity/pricing. After maturity, holders still receive apxUSD, whose issuer redemption path is limited to eligible whitelisted participants while general users rely on market liquidity.",
+  "notes": "Fixed-maturity Pendle principal token over apxUSD. Adds Pendle PT smart-contract/maturity mechanics on top of apxUSD, which is backed by offchain DAT preferred shares and has permissioned direct redemption.",
+  "sources": [
+    {
+      "label": "Pendle PT docs",
+      "url": "https://docs.pendle.finance/pendle-v2/ProtocolMechanics/YieldTokenization/PT"
+    },
+    {
+      "label": "Pendle asset API",
+      "url": "https://api-v2.pendle.finance/core/v1/1/assets/0x92a6a01b07984de46c24e8eba248449beb8b1dcb"
+    },
+    {
+      "label": "DefiLlama Pendle",
+      "url": "https://defillama.com/protocol/pendle"
+    },
+    {
+      "label": "Apyx apxUSD docs",
+      "url": "https://docs.apyx.fi/product-overview/apxusd-overview"
+    }
+  ]
+}

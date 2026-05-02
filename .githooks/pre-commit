@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Normalize staged collateral review JSON filenames to lowercase before commit.
+# This enforces the repository convention:
+#   v*/chain/<chainId>/<lowercaseCollateralAddress>.json
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+changed=0
+
+while IFS= read -r path; do
+  case "$path" in
+    v*/chain/*/*.json) ;;
+    *) continue ;;
+  esac
+
+  dir="${path%/*}"
+  file="${path##*/}"
+  lower_file="$(printf '%s' "$file" | tr '[:upper:]' '[:lower:]')"
+
+  if [ "$file" = "$lower_file" ]; then
+    continue
+  fi
+
+  lower_path="$dir/$lower_file"
+
+  if [ -e "$lower_path" ] && [ "$path" != "$lower_path" ]; then
+    # On case-insensitive filesystems this may be the same file. If it is a
+    # distinct file, stop to avoid overwriting an existing review.
+    if [ ! "$path" -ef "$lower_path" ]; then
+      printf 'pre-commit: cannot lowercase %s: target %s already exists\n' "$path" "$lower_path" >&2
+      exit 1
+    fi
+  fi
+
+  tmp_path="$dir/.lowercase-normalize-$$-$lower_file"
+
+  if git ls-files --error-unmatch -- "$path" >/dev/null 2>&1; then
+    git mv -f -- "$path" "$tmp_path"
+    git mv -f -- "$tmp_path" "$lower_path"
+  else
+    mv -- "$path" "$tmp_path"
+    mv -- "$tmp_path" "$lower_path"
+    git add -- "$lower_path"
+    git rm --cached --ignore-unmatch -- "$path" >/dev/null
+  fi
+
+  printf 'pre-commit: renamed %s -> %s\n' "$path" "$lower_path" >&2
+  changed=1
+done < <(git diff --cached --name-only --diff-filter=ACMR)
+
+if [ "$changed" -eq 1 ]; then
+  printf 'pre-commit: normalized collateral review filenames to lowercase.\n' >&2
+fi

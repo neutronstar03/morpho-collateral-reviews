@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xcd9f5907f92818bc06c9ad70217f089e190d2a32",
+  "symbol": "srRoyUSDC",
+  "name": "Senior Royco USDC",
+  "type": "vault",
+  "protocol": "Royco Dawn",
+  "protocolUrl": "https://defillama.com/protocol/royco-protocol",
+  "rank": 2,
+  "redeem": "srRoyUSDC is an ERC-4626 vault share for USDC deposited into Royco Dawn senior tranches. Deposits require KYC/KYB and U.S. persons are not eligible. Vault withdrawals use 30-day epochs, then up to 2 days of processing before funds are claimable; a secondary market may offer faster exit if liquidity exists.",
+  "notes": "Senior vault allocates across multiple senior tranches with junior first-loss protection, but yield and protection are not guaranteed and underlying yield-source liquidity can affect exits.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://www.royco.org/"
+    },
+    {
+      "label": "Royco Dawn overview docs",
+      "url": "https://royco.gitbook.io/royco-dawn"
+    },
+    {
+      "label": "Deposits and withdrawals docs",
+      "url": "https://royco.gitbook.io/royco-dawn/royco-dawn/5.-deposits-and-withdrawals"
+    },
+    {
+      "label": "Key addresses docs",
+      "url": "https://royco.gitbook.io/royco-dawn/royco-dawn/9.-key-addresses"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/royco-protocol"
+    }
+  ]
+}

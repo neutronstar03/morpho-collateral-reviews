@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+  "symbol": "apyUSD",
+  "name": "apyUSD",
+  "type": "vault",
+  "protocol": "Apyx Protocol",
+  "protocolUrl": "https://defillama.com/protocol/apyx-protocol",
+  "rank": 1,
+  "redeem": "apyUSD is an ERC-4626 vault share for apxUSD. Deposits are permissionless and immediate, but exits are not instant: redeeming burns apyUSD for non-transferable apxUSD_unlock, then users wait about 20 days before claiming apxUSD; multiple unlocks reset the cooldown. Secondary-market exit may be available through DEX liquidity.",
+  "notes": "Yield-bearing wrapper around apxUSD, whose backing is offchain DAT preferred shares. Official docs state no KYB/KYC requirement for the vault, but frontend access is restricted in some jurisdictions. Contract is upgradeable and includes pause, denylist, fee, vesting, and unlock-token controls.",
+  "sources": [
+    {
+      "label": "Apyx apyUSD docs",
+      "url": "https://docs.apyx.fi/product-overview/apyusd-overview"
+    },
+    {
+      "label": "Locking apxUSD for apyUSD",
+      "url": "https://docs.apyx.fi/technical-overview/locking"
+    },
+    {
+      "label": "Unlocking apyUSD for apxUSD",
+      "url": "https://docs.apyx.fi/technical-overview/unlocking"
+    },
+    {
+      "label": "DefiLlama protocol",
+      "url": "https://defillama.com/protocol/apyx-protocol"
+    },
+    {
+      "label": "Apyx contract documentation",
+      "url": "https://apyx-labs.github.io/evm-contracts/src/ApyUSD.sol/contract.ApyUSD.html"
+    }
+  ]
+}

@@ -44,6 +44,16 @@ Rules:
 - use `null` for unknown values
 - do not invent redemption details
 
+## Git hooks
+
+This repo includes a pre-commit hook that automatically lowercases staged collateral review JSON filenames under `v*/chain/<chainId>/`.
+
+Enable it once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## JSON shape (v1)
 
 Each file should look like this:
