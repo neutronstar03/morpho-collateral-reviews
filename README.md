@@ -23,8 +23,12 @@ v1/
   chain/
     1/
       0x....json
+      oracle/
+        0x....json
     8453/
       0x....json
+      oracle/
+        0x....json
     42161/
       0x....json
 ```
@@ -39,6 +43,7 @@ Rules:
 
 - filenames must be the lowercase collateral address
 - one JSON file per collateral per chain
+- oracle review filenames must be the lowercase oracle address and live under `v1/chain/<chainId>/oracle/`
 - use plain ASCII quotes in JSON strings
 - prefer official sources
 - use `null` for unknown values
@@ -106,18 +111,63 @@ Notes on scoring:
 - `rank` should summarize overall comfort with the collateral structure and redeemability.
 - exact scoring guidelines can evolve later; consistency matters more than precision in v1.
 
+## JSON shape (oracle v1.1)
+
+Oracle reviews are an additive v1.1 resource. They do not replace collateral reviews.
+
+Files are stored by chain ID, then oracle address:
+
+```text
+v1/chain/{chainId}/oracle/{lowercaseOracleAddress}.json
+```
+
+Each file should look like this:
+
+```json
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x...",
+  "type": "chainlink-compatible",
+  "provider": "API3",
+  "rank": 3,
+  "pricing": "COMP/USD divided by USDC/USD using API3 ReaderProxy feeds.",
+  "notes": "Direct pair route, but depends on API3 dAPI configuration rather than native Chainlink feeds.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0x..."
+    }
+  ]
+}
+```
+
+### Oracle field notes
+
+- `version`: string literal `"1.1"` for additive oracle reviews.
+- `chainId`: EVM chain ID for the reviewed oracle.
+- `oracleAddress`: lowercase Morpho market oracle address.
+- `type`: short human-readable category such as `chainlink`, `chainlink-compatible`, `erc4626-vault`, `pendle`, `redstone`, `pyth`, `meta-oracle`, `custom-adapter`, or `unknown`.
+- `provider`: short provider/protocol label such as `Chainlink`, `API3`, `Redstone`, `Pendle`, `Pyth`, `Chronicle`, `Midas`, `ERC4626`, or `Unknown`.
+- `rank`: quick reviewer score from `1` to `5`.
+  - `1`: very weak / opaque / avoid
+  - `2`: concerning / unclear or risky oracle assumptions
+  - `3`: mixed / acceptable with caveats
+  - `4`: solid / understandable structure
+  - `5`: very strong / simple, transparent, battle-tested
+- `pricing`: one short sentence describing how the oracle prices collateral in loan-token terms.
+- `notes`: short review-oriented caveat or comfort summary.
+- `sources`: links that justify the entry. Prefer contract pages, official docs, provider docs, and relevant source code.
+
+Notes on oracle scoring:
+
+- `rank` is a human review signal, not a formal proof of oracle safety.
+- Prefer concise wording; MBM displays this in a compact frontend/mobile section.
+- If an oracle path is unknown or only partially understood, say so and score conservatively.
+
 ## Research prompt
 
 The agent prompt used to produce first-pass review files lives here:
 
 - [docs/collateral-profile-researcher-prompt.md](./docs/collateral-profile-researcher-prompt.md)
-
-## Notes for MBM integration
-
-MBM can look up a review file by chain ID + collateral address and fetch the corresponding JSON directly.
-
-Suggested lookup pattern:
-
-```text
-v1/chain/{chainId}/{lowercaseCollateralAddress}.json
-```
+- [docs/oracle-market-researcher-prompt.md](./docs/oracle-market-researcher-prompt.md) for oracle reviews.
