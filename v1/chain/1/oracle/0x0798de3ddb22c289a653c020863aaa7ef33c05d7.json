@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x0798de3ddb22c289a653c020863aaa7ef33c05d7",
+  "type": "chainlink-compatible",
+  "provider": "API3",
+  "rank": 3,
+  "pricing": "Prices dCOMP as COMP via a 1:1 wrapper assumption, using API3 COMP/USD divided by API3 USDC/USD.",
+  "notes": "Direct MorphoChainlinkOracleV2 route with no vault legs, but both feeds are API3 ReaderProxy EIP-1967 proxies and the collateral relies on dCOMP redemption to COMP.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0x0798de3ddb22c289a653c020863aaa7ef33c05d7#code"
+    },
+    {
+      "label": "MorphoChainlinkOracleV2 source",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    },
+    {
+      "label": "API3 ReaderProxy docs",
+      "url": "https://docs.api3.org/dapps/integration/contract-integration.html"
+    },
+    {
+      "label": "dCOMP contract",
+      "url": "https://etherscan.io/token/0x91d14789071e5e195ffc9f745348736677de3292#code"
+    }
+  ]
+}
