@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 999,
+  "oracleAddress": "0xf3faf23d8485bc0b37e15e3cf28e178330f05b0a",
+  "type": "redstone",
+  "provider": "RedStone",
+  "rank": 3,
+  "pricing": "AVLT_FUNDAMENTAL/USD via RedStone push-based adapter, with USDT0 implicitly pegged to $1 (no quote feed).",
+  "notes": "RedStone adapter wrapped as Chainlink AggregatorV3Interface. Two-layer proxy architecture (feed proxy + adapter proxy); adapter upgraded 4 times historically. Requires 3+ signer threshold. USDT0 depeg risk not covered by the oracle. Feed updates every ~5 minutes via push transactions.",
+  "sources": [
+    {
+      "label": "Oracle contract (HyperEVMScan)",
+      "url": "https://hyperevmscan.io/address/0xf3faf23d8485bc0b37e15e3cf28e178330f05b0a#code"
+    },
+    {
+      "label": "RedStone feed (HyperEVMScan)",
+      "url": "https://hyperevmscan.io/address/0x6ed89c637a6a42e0dc625fbc16888263fa724d51#code"
+    },
+    {
+      "label": "RedStone adapter (HyperEVMScan)",
+      "url": "https://hyperevmscan.io/address/0x24c8964338deb5204b096039147b8e8c3aea42cc#code"
+    },
+    {
+      "label": "Morpho addresses",
+      "url": "https://docs.morpho.org/get-started/resources/addresses/"
+    }
+  ]
+}

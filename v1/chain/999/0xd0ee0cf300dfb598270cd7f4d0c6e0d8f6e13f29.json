@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 999,
+  "collateralAddress": "0xd0ee0cf300dfb598270cd7f4d0c6e0d8f6e13f29",
+  "symbol": "AVLT",
+  "name": "Altura Vault Tokens",
+  "type": "vault",
+  "protocol": "Altura",
+  "protocolUrl": "https://defillama.com/protocol/altura",
+  "rank": 3,
+  "redeem": "AVLT is an ERC-4626 vault share token redeemable for the underlying USD₮0 on HyperEVM. Withdrawals follow a dual-path system: instant redemption when the vault's liquid balance ≥ the requested amount (0.1% fee), or epoch-based redemption processed at the end of the current epoch (0% fee). Standard withdrawals are processed within 72 hours. The RWA gold strategy component requires up to 7 days' notice for capital recall from the asset manager (Inessa Holdings LLC FZ). No KYC, no lockups, no exit penalties. All redemptions occur on-chain at the current price-per-share (PPS), which reflects cumulative strategy performance.",
+  "notes": "Multi-strategy vault on HyperEVM: delta-neutral market making, funding rate/basis arbitrage, and RWA physical gold trading. Five external audits (Adevarlabs, Omniscia, Sherlock). All strategies reported as market-neutral or hedged. Off-chain components (RWA gold trading via third-party asset manager) are mirrored and settled on-chain. Permissioned transfer restriction limits fund movement to pre-approved addresses only, which is both a safety feature and a centralization concern. Governance split across Guardian (pause), Operator (oracle), and Timelock Admin roles — no single role can move user funds. TVL ~$22M, relatively early-stage protocol on HyperEVM.",
+  "sources": [
+    {
+      "label": "Official app",
+      "url": "https://app.altura.trade"
+    },
+    {
+      "label": "Documentation",
+      "url": "https://docs.altura.trade"
+    },
+    {
+      "label": "DefiLlama protocol page",
+      "url": "https://defillama.com/protocol/altura"
+    },
+    {
+      "label": "Audits",
+      "url": "https://docs.altura.trade/audit.md"
+    }
+  ]
+}
