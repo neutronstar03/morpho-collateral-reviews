@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xd3fd63209fa2d55b07a0f6db36c2f43900be3094",
+  "symbol": "wsrUSD",
+  "name": "Wrapped Savings rUSD",
+  "type": "vault",
+  "protocol": "Reservoir",
+  "protocolUrl": "https://defillama.com/protocol/reservoir-protocol",
+  "rank": 4,
+  "redeem": "Instant onchain redemption back to rUSD via the ERC-4626\n  contract with no lockups or fees. rUSD can then be redeemed 1:1 for USDC,\n  USDT, or USD1 via the Peg Stability Module (PSM) if liquidity is available.\n  ",
+  "notes": "wsrUSD is an ERC-4626 wrapper for Reservoir's stablecoin rUSD\n  that compounds yield per-second with no deposit/withdrawal fees (unlike the\n  daily-compounding srUSD which carries a one-day interest burn fee).\n  Governance actively adjusts the APY based on protocol balance sheet\n  performance.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://www.reservoir.xyz/"
+    },
+    {
+      "label": "Docs",
+      "url": "https://docs.reservoir.xyz/products/savings-srusd-and-\n  wsrusd"
+    },
+    {
+      "label": "Docs - Calculations",
+      "url": "https://docs.reservoir.xyz/products/savings-srusd-and-\n  wsrusd/srusd-and-wsrusd-calculations"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/reservoir-protocol/reservoir"
+    }
+  ]
+}

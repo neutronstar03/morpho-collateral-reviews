@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x7309e1e2e74af170c69bde8fcb30397f8697d5ff",
+  "symbol": "wbravUSDC",
+  "name": "Wrapped Avant+ DeFi Yield",
+  "type": "vault",
+  "protocol": "Bracket Protocol",
+  "protocolUrl": "https://defillama.com/protocol/bracket-protocol",
+  "rank": 3,
+  "redeem": "Withdrawals are request-based via the Bracket platform. Requests\n  must be submitted prior to 18:00 UTC and typically process on a T+1\n  schedule (available 1 day later, plus approximately 2 hours for\n  processing).",
+  "notes": "Non-rebasing wrapped version of the rebasing bravUSDC token,\n  designed for external lending market compatibility. The underlying strategy\n  deploys USDC into the Avant ecosystem and other yield sources, carrying a\n  higher risk profile (often leveraging assets). It has a 1.5% total TVL fee\n  (1.0% Bracket platform, 0.5% Boreal management) and a 20% performance fee\n  above high-water mark.",
+  "sources": [
+    {
+      "label": "Bracket App Page / Docs",
+      "url": "https://app.bracket.fi/yield/bravusdc"
+    },
+    {
+      "label": "Etherscan Token Contract",
+      "url": "https://etherscan.io/token/0x7309e1e2e74af170c69bde8fcb30397f8697d5ff"
+    }
+  ]
+}
