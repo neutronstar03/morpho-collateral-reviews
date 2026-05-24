@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 8453,
+  "oracleAddress": "0xbf991c8c88be948881a4d2168f7b7f3e1ee71dbc",
+  "type": "erc4626-vault",
+  "provider": "ERC4626",
+  "rank": 4,
+  "pricing": "yoETH ERC-4626 vault convertToAssets(1 share) returns WETH value, scaled by 1e18 to Morpho's 1e36 format. No Chainlink feeds involved.",
+  "notes": "MorphoChainlinkOracleV2 (immutable, no proxy) using only the yoETH vault's on-chain exchange rate. All four Chainlink feed slots are zero-address, and the QUOTE_VAULT is zero — making this a pure vault-rate oracle. The oracle contract is well-audited and battle-tested. However, the underlying yoETH vault is an upgradeable proxy (10+ upgrades) that can be paused and relies on multi-strategy yield accounting. SCALE_FACTOR is 1e18. Market LLTV is 91.5%.",
+  "sources": [
+    {
+      "label": "Oracle contract (BaseScan)",
+      "url": "https://basescan.org/address/0xbf991c8c88be948881a4d2168f7b7f3e1ee71dbc#code"
+    },
+    {
+      "label": "MorphoChainlinkOracleV2 source (GitHub)",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    },
+    {
+      "label": "yoETH vault (BaseScan)",
+      "url": "https://basescan.org/address/0x3a43aec53490cb9fa922847385d82fe25d0e9de7#code"
+    }
+  ]
+}
