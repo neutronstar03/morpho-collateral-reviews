@@ -24,12 +24,6 @@ Input:
 Goal:
 Research the market oracle and return a compact JSON object that can be used by a UI component showing a manually curated oracle review.
 
-The output file will be stored at:
-
-```text
-v1/chain/{chainId}/oracle/{lowercaseOracleAddress}.json
-```
-
 Research instructions:
 1. Resolve the Morpho market params for the input market:
    - loan token
@@ -60,7 +54,9 @@ Research instructions:
    - hardcoded peg assumptions
    - stale/low-quality feeds when discoverable
    - non-standard Chainlink-compatible sources such as API3 ReaderProxy or Redstone adapters
-6. Assign a `rank` from 1 to 5 as a quick reviewer score.
+   - **data freshness**: always inspect `latestRoundData()` timestamps on every underlying feed; stale data signals infrastructure failure or an oracle that has stopped paying to post updates — both are catastrophic for bad debt
+6. Assign a `rank` from 0 to 5 as a quick reviewer score.
+   - `0` = broken / stale data / do not use in current state
    - `1` = very weak / opaque / avoid
    - `2` = concerning / unclear or risky oracle assumptions
    - `3` = mixed / acceptable with caveats
@@ -102,7 +98,7 @@ Rules:
 - Output valid JSON only.
 - Use lowercase hex addresses.
 - `version` must be the string `"1.1"`.
-- `rank` must be an integer from `1` to `5`.
+- `rank` must be an integer from `0` to `5`.
 - Keep `pricing` to one concise sentence.
 - Keep `notes` short and review-oriented.
 - Include at least 2 sources when possible.
@@ -117,4 +113,4 @@ Validation checklist before replying:
 - Does `pricing` explain the collateral-to-loan-token route without over-explaining?
 - Does `rank` reflect complexity, transparency, upgradability, and data-source quality?
 - Are uncertain facts represented as `null` or clearly softened?
-- Are sources sufficient to justify the provider, pricing route, and caveats?
+- Did you check `latestRoundData()` timestamps on every underlying feed for staleness?
