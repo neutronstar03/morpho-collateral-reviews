@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xcf45d565252d56b5d377631982c8543e80a4c6a1",
+  "type": "chainlink-compatible",
+  "provider": "Chronicle",
+  "rank": 4,
+  "pricing": "Direct STONE/ETH price from Chronicle, scaled to 1e36 by MorphoChainlinkOracleV2.",
+  "notes": "Single-feed route via Chronicle Scribe (STONE/ETH). Feed has 25 signers with bar=13 and is actively poked (last update ~2.5h before latest block). Oracle contract is an immutable MorphoChainlinkOracleV2 factory deployment. No vaults, no multi-leg conversions, and no hardcoded peg assumptions.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xcf45d565252d56b5d377631982c8543e80a4c6a1"
+    },
+    {
+      "label": "Chronicle feed",
+      "url": "https://etherscan.io/address/0x057f30e63a69175c69a4af5656b8c9ee647de3d0"
+    },
+    {
+      "label": "Morpho Chainlink Oracle V2 source",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    }
+  ]
+}

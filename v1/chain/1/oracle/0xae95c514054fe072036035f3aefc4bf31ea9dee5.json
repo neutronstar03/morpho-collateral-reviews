@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xae95c514054fe072036035f3aefc4bf31ea9dee5",
+  "type": "redstone",
+  "provider": "RedStone",
+  "rank": 3,
+  "pricing": "beraSTONE/ETH via RedStone Classic price feed, scaled by 1e28 to Morpho 1e36 format, with WETH treated 1:1 to ETH.",
+  "notes": "MorphoChainlinkOracleV2 with a single BASE_FEED_1 (beraSTONE_FUNDAMENTAL RedStone feed, 8 decimals). No vaults, no secondary feeds, no quote feeds — simplest possible configuration. RedStone is pull-based (relayer-dependent), unlike native Chainlink push feeds. Feed data ~12h old at check; no redundancy if RedStone relayer stops. Immutable contract (no proxy). beraSTONE is a bridged Berachain LST — bridge risk sits outside the oracle.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xae95c514054fe072036035f3aefc4bf31ea9dee5"
+    },
+    {
+      "label": "RedStone feed (BASE_FEED_1)",
+      "url": "https://etherscan.io/address/0x4f67fd74cff274ef2942223c0f3166b856410add"
+    },
+    {
+      "label": "Morpho Oracle V2 Factory",
+      "url": "https://etherscan.io/address/0x3A7bB36Ee3f3eE32A60e9f2b33c1e5f2E83ad766"
+    }
+  ]
+}
