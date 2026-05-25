@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 8453,
+  "oracleAddress": "0x1c1e58d096dfff526b8ab1feca4fdf204b4d2012",
+  "type": "custom-adapter",
+  "provider": "DIA",
+  "rank": 2,
+  "pricing": "WMTX/USD from DIA Oracle V2 key-value feed via unverified adapter, treated as WMTX/USDC assuming USDC/USD parity.",
+  "notes": "Mutable delegate points to unverified adapter at 0xEc7E3dAc...38Fb; no staleness check on feed timestamp. Delegate can be changed at any time by owner (0x06F6...9E50). DIA feed is permissioned — only authorized updaters post prices. Feed updated ~2 min, data was fresh at inspection. Single data source with no redundancy. 8-decimals underlying feed.",
+  "sources": [
+    {
+      "label": "Morpho Oracle contract",
+      "url": "https://basescan.org/address/0x1c1e58d096dfff526b8ab1feca4fdf204b4d2012"
+    },
+    {
+      "label": "DIA Oracle V2 feed",
+      "url": "https://basescan.org/address/0x1b65692580bdf760ceb86f4c91d0389d3c1e0767"
+    },
+    {
+      "label": "Delegate adapter (unverified)",
+      "url": "https://basescan.org/address/0xec7e3dac168a01b34f0ea4e21d4a6b7fffc138fb"
+    }
+  ]
+}

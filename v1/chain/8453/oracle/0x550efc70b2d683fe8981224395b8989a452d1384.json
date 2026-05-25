@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 8453,
+  "oracleAddress": "0x550efc70b2d683fe8981224395b8989a452d1384",
+  "type": "custom-adapter",
+  "provider": "DIA",
+  "rank": 2,
+  "pricing": "KTA/USD price from DIA Oracle V2 push feed, scaled to 18 decimals with implicit USDC=USD peg (no separate USD/USDC conversion).",
+  "notes": "ProxyOracle delegates to a custom DIAOracle adapter wrapping DIA Oracle V2. Centralized push model — a single updater (0xB14F5026...) posts prices every ~2 min; data was fresh at check (within minutes). Delegate address is mutable by the owner, introducing upgrade risk. Hardcoded USDC/USD 1:1 peg means any USDC depeg causes collateral mispricing. KTA is a low-cap token with thin on-chain liquidity.",
+  "sources": [
+    {
+      "label": "ProxyOracle contract",
+      "url": "https://basescan.org/address/0x550eFC70B2d683FE8981224395B8989a452D1384#code"
+    },
+    {
+      "label": "DIAOracle adapter",
+      "url": "https://basescan.org/address/0xD1E0579Bb2D4462318BbBb9ce705B8aCA9983173#code"
+    },
+    {
+      "label": "DIA Oracle V2",
+      "url": "https://basescan.org/address/0x1b65692580bdf760ceb86f4c91d0389d3c1e0767#code"
+    },
+    {
+      "label": "DIA Documentation",
+      "url": "https://docs.diadata.org/"
+    }
+  ]
+}
