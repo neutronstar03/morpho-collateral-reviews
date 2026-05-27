@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+  "symbol": "fxSAVE",
+  "name": "f(x) USD Saving",
+  "type": "vault",
+  "protocol": "f(x) Protocol",
+  "protocolUrl": "https://defillama.com/protocol/fx-protocol",
+  "rank": 3,
+  "redeem": "Two-layer redemption. Layer 1: fxSAVE to fxSP shares via ERC-4626 redeem() (instant, onchain). Layer 2: fxSP to fxUSD + USDC via either (a) instantRedeem() which charges a withdrawal fee for immediate exit, or (b) a two-step requestRedeem() then cooldown then redeem() that avoids the fee but introduces a delay. A one-step instantRedeemFromFxSave() router function also exists and pays the fee. The underlying collateral is the Stability Pool, which holds fxUSD (a wstETH/WBTC-backed stablecoin) and USDC.",
+  "notes": "fxSAVE is an ERC-4626 auto-compounding vault built by Concentrator (AladdinDAO) wrapping the f(x) Protocol Stability Pool (fxSP). It compounds wstETH/WBTC rewards from the Stability Pool back into more fxUSD/USDC. Both fxSAVE and fxSP use upgradeable proxy contracts governed by AladdinDAO. The two-layer design adds complexity: a position in fxSAVE is ultimately exposure to the f(x) Protocol's peg-keeping and stability mechanisms. fxUSD can redeem for wstETH/WBTC at oracle price if it depegs. 16 audits across the protocol ecosystem. ~47M fxSAVE supply. The Stability Pool held ~52.4M fxUSD and ~56K USDC at last check.",
+  "sources": [
+    {
+      "label": "f(x) Protocol website",
+      "url": "https://fx.aladdin.club"
+    },
+    {
+      "label": "DefiLlama - f(x) Protocol",
+      "url": "https://defillama.com/protocol/fx-protocol"
+    },
+    {
+      "label": "GitBook docs - Stability Pool & fxSAVE",
+      "url": "https://fxprotocol.gitbook.io/fx-docs/f-x-protocol-mechanisms/stability-pool.md"
+    },
+    {
+      "label": "GitBook docs - Integrating fxSAVE (redemption API)",
+      "url": "https://fxprotocol.gitbook.io/fx-docs/developers/integrating-fxsave.md"
+    },
+    {
+      "label": "GitHub - f(x) Protocol v2 contracts",
+      "url": "https://github.com/AladdinDAO/fx-protocol-contracts"
+    },
+    {
+      "label": "Etherscan - fxSAVE token",
+      "url": "https://etherscan.io/token/0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39"
+    }
+  ]
+}
