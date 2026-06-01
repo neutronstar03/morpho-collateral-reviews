@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xe24a3dc889621612422a64e6388927901608b91d",
+  "symbol": "sUSN",
+  "name": "Staked USN",
+  "type": "staking receipt",
+  "protocol": "Noon",
+  "protocolUrl": "https://defillama.com/protocol/noon",
+  "rank": 3,
+  "redeem": "sUSN can be unstaked in the Noon dApp for USN, subject to a cooldown period whose duration was not specified in the docs, or sold on DEX liquidity. USN primary redemption is permissioned to whitelisted institutional wallets after AML/KYC/KYB review; other users rely on DEX markets.",
+  "notes": "ERC-4626-style staking token backed by USN in the staking pool. USN is described as backed 1:1 by USDT, USDC, or short-term U.S. Treasury Bills held in custodial wallets; sUSN yield comes from Noon's strategy returns. Main caveats are permissioned primary redemption, offchain/custodial backing, upgradeable token contracts, and unspecified unstake cooldown.",
+  "sources": [
+    {
+      "label": "Noon docs - USN and sUSN",
+      "url": "https://docs.noon.capital/built-for-high-yields/our-stablecoin-usn-and-susn.md"
+    },
+    {
+      "label": "Noon docs - Minting and Redemption",
+      "url": "https://docs.noon.capital/built-for-high-yields/our-stablecoin-usn-and-susn/minting-and-redemption.md"
+    },
+    {
+      "label": "Noon docs - Contracts and addresses",
+      "url": "https://docs.noon.capital/additional-resources/contracts-and-addresses.md"
+    },
+    {
+      "label": "DefiLlama - Noon",
+      "url": "https://defillama.com/protocol/noon"
+    }
+  ]
+}
