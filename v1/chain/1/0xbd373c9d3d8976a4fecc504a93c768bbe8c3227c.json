@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xbd373c9d3d8976a4fecc504a93c768bbe8c3227c",
+  "symbol": "ROY-ST-apyUSD",
+  "name": "Royco Senior Tranche apyUSD",
+  "type": "vault",
+  "protocol": "Royco Dawn / Apyx Protocol",
+  "protocolUrl": "https://defillama.com/protocol/royco-v2",
+  "rank": 2,
+  "redeem": "Royco senior tranche shares redeem through the tranche contract into apyUSD claims based on current NAV and coverage. Junior capital is designed to absorb first losses before Senior, but protection is conditional and may be insufficient. Exiting the underlying apyUSD requires the apyUSD unlock path, including a roughly 20-day cooldown to apxUSD; apxUSD-to-USDC exit depends on available liquidity/redemption routes.",
+  "notes": "Onchain asset is apyUSD and TRANCHE_TYPE is Senior. Adds Royco tranche/NAV/upgradeability complexity on top of apyUSD, whose own exit path has cooldown, offchain DAT exposure, and issuer/market liquidity caveats.",
+  "sources": [
+    {
+      "label": "Royco Dawn overview",
+      "url": "https://docs.royco.org/overview"
+    },
+    {
+      "label": "Apyx and Royco launch article",
+      "url": "https://blog.apyx.fi/apyx-royco-launch-first-ever-tranched-onchain-digital-credit-yield-product/"
+    },
+    {
+      "label": "Royco SeniorTranche source metadata",
+      "url": "https://repo.sourcify.dev/contracts/partial_match/1/0x687902746301742c02de741c6ee1c1d66040ab65/metadata.json"
+    },
+    {
+      "label": "Apyx apyUSD docs",
+      "url": "https://docs.apyx.fi/product-overview/apyusd-overview"
+    },
+    {
+      "label": "Apyx unlocking docs",
+      "url": "https://docs.apyx.fi/technical-overview/unlocking"
+    },
+    {
+      "label": "DefiLlama Royco V2",
+      "url": "https://defillama.com/protocol/royco-v2"
+    }
+  ]
+}
