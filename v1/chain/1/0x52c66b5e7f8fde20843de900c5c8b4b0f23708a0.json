@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x52c66b5e7f8fde20843de900c5c8b4b0f23708a0",
+  "symbol": "AZND",
+  "name": "Asian Dollar",
+  "type": "rwa",
+  "protocol": "Mu Digital",
+  "protocolUrl": "https://defillama.com/protocol/mu-digital",
+  "rank": 3,
+  "redeem": "Direct minting and redemption of AZND is available only to approved counterparties that have cleared Mu Digital KYC. Redemptions normally enter a queue tied to a weekly liquidity schedule, with docs saying to expect about 7 calendar days, while smaller amounts may be processed faster from an onchain liquidity buffer. Non-approved holders rely on supported DEX liquidity for permissionless exit.",
+  "notes": "Senior tranche of Mu Digital's Asia credit portfolio. muBOND is intended to absorb first losses before AZND, but AZND still depends on offchain RWA credit performance, liquidity management, and permissioned redemption operations.",
+  "sources": [
+    {
+      "label": "Mu Digital AZND docs",
+      "url": "https://docs.mudigital.net/protocol-overview/asia-dollar-aznd"
+    },
+    {
+      "label": "Mu Digital AZND mint/redeem docs",
+      "url": "https://docs.mudigital.net/protocol-overview/asia-dollar-aznd/mint-redeem"
+    },
+    {
+      "label": "Mu Digital price stability mechanism",
+      "url": "https://docs.mudigital.net/mechanics/price-stability-mechanism"
+    },
+    {
+      "label": "Mu Digital risk management framework",
+      "url": "https://docs.mudigital.net/mechanics/risk-management-framework"
+    },
+    {
+      "label": "Mu Digital contract addresses",
+      "url": "https://docs.mudigital.net/technical-reference/smart-contract-architecture/smart-contract-addresses"
+    },
+    {
+      "label": "DefiLlama - Mu Digital",
+      "url": "https://defillama.com/protocol/mu-digital"
+    }
+  ]
+}
