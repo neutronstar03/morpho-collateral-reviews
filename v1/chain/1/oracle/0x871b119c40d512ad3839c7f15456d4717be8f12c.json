@@ -1,0 +1,32 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x871b119c40d512ad3839c7f15456d4717be8f12c",
+  "type": "chainlink",
+  "provider": "Chainlink",
+  "rank": 4,
+  "pricing": "wstETH/ETH custom feed divided by Chainlink USDC/ETH feed, with scale adjustment through two proxy layers.",
+  "notes": "Both underlying price feeds are real Chainlink contracts (stETH/ETH and USDC/ETH EACAggregatorProxy). The WstETHPriceFeed is a third-party adapter deployed by Compound Deployer 5 (not Chainlink) that wraps Chainlink stETH/ETH and multiplies by wstETH.stEthPerToken(); it is immutable, verified, and battle-tested by Compound before Morpho adopted it. Two Ownable proxy layers (ProxyOracle and ScaledProxyOracle) add delegate-upgrade risk. The underlying ChainlinkOracle is immutable with hardcoded feed addresses.",
+  "sources": [
+    {
+      "label": "Oracle contract (ProxyOracle)",
+      "url": "https://etherscan.io/address/0x871b119c40d512ad3839c7f15456d4717be8f12c#code"
+    },
+    {
+      "label": "ScaledProxyOracle delegate",
+      "url": "https://etherscan.io/address/0x98ddbfa10abd822f235a3d6340f1c233c99eddad#code"
+    },
+    {
+      "label": "ChainlinkOracle base feed",
+      "url": "https://etherscan.io/address/0x48f7e36eb6b826b2df4b2e630b62cd25e89e40e2#code"
+    },
+    {
+      "label": "WstETHPriceFeed custom adapter",
+      "url": "https://etherscan.io/address/0x4f67e4d9bd67efa28236013288737d39aef48e79#code"
+    },
+    {
+      "label": "Chainlink USDC/ETH feed",
+      "url": "https://etherscan.io/address/0x986b5e1e1755e3c2440e960477f25201b0a8bbd4#code"
+    }
+  ]
+}

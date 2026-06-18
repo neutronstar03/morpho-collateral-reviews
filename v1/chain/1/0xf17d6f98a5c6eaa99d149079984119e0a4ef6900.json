@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xf17d6f98a5c6eaa99d149079984119e0a4ef6900",
+  "symbol": "sUSG",
+  "name": "Savings USG",
+  "type": "vault",
+  "protocol": "Tangent Finance",
+  "protocolUrl": "https://defillama.com/protocol/tangent-finance",
+  "rank": 2,
+  "redeem": "sUSG is Tangent's Yearn v3-style savings vault for USG. Tangent docs say sUSG can be minted and redeemed for USG without fee or delay, with yield autocompounded into the USG-per-sUSG index. The underlying USG stablecoin does not redeem directly for collateral; its peg relies on overcollateralized debt markets, dynamic rates/reward cuts, Peg Keepers, and secondary-market liquidity.",
+  "notes": "Onchain asset is USG. Structure is simple at the sUSG layer, but underlying USG has no direct collateral redemption, is described by docs as beta/experimental, and depends on Tangent governance-controlled parameters and peg mechanisms.",
+  "sources": [
+    {
+      "label": "Tangent sUSG docs",
+      "url": "https://docs.tangent.finance/docs/usg/susg"
+    },
+    {
+      "label": "Tangent USG overview",
+      "url": "https://docs.tangent.finance/docs/usg/overview_usg"
+    },
+    {
+      "label": "Tangent Peg Keepers",
+      "url": "https://docs.tangent.finance/docs/usg/peg_keepers"
+    },
+    {
+      "label": "Tangent contracts",
+      "url": "https://docs.tangent.finance/docs/faq/contracts"
+    },
+    {
+      "label": "DefiLlama Tangent Finance",
+      "url": "https://defillama.com/protocol/tangent-finance"
+    }
+  ]
+}

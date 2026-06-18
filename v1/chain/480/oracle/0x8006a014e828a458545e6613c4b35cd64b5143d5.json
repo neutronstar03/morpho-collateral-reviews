@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 480,
+  "oracleAddress": "0x8006a014e828a458545e6613c4b35cd64b5143d5",
+  "type": "chainlink-compatible",
+  "provider": "Chainlink",
+  "rank": 3,
+  "pricing": "WLD/USD Chainlink feed multiplied by scale factor; USDC assumed 1:1 with USD (no quote feed).",
+  "notes": "MorphoChainlinkOracleV2 deployed via official Morpho factory. Single Chainlink WLD/USD feed at 18 decimals, no vaults, no quote feeds, no proxy (immutable). Hardcoded USDC=USD peg means USDC deviation is invisible to the oracle. No staleness or bounds checks in the adapter; relies on Chainlink's own guarantees. L2 environment introduces additional feed-update latency relative to L1.",
+  "sources": [
+    {
+      "label": "Oracle contract (Worldscan)",
+      "url": "https://worldscan.org/address/0x8006A014e828a458545e6613C4b35Cd64b5143D5"
+    },
+    {
+      "label": "WLD/USD Chainlink feed (Worldscan)",
+      "url": "https://worldscan.org/address/0x8Bb2943AB030E3eE05a58d9832525B4f60A97FA0"
+    },
+    {
+      "label": "MorphoChainlinkOracleV2 source (GitHub)",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xd166337499e176bbc38a1fbd113ab144e5bd2df7",
+  "symbol": "sUSDat",
+  "name": "Staked USDat",
+  "type": "vault",
+  "protocol": "Saturn",
+  "protocolUrl": null,
+  "rank": 2,
+  "redeem": "sUSDat is an ERC-4626 vault share redeemable for USDat (Saturn's permissioned stablecoin). Exit follows a 3-stage queue: (1) initiate unstaking with a minimum-USDat limit (min 10 USDat), (2) wait ~7 days while Saturn's processor sells STRC on secondary markets to source USDat — payout is pro-rata; reverts if below user's minimum, (3) claim USDat by burning the NFT receipt. Direct USDat-to-USDC redemption exists only for KYC-onboarded addresses. Non-KYC holders can exit instantly via sUSDat/USDC pools on Curve and Balancer at market price. Processing fee is ~10 bps. Users cannot update their minimum once batch processing starts.",
+  "notes": "100% backed by STRC (Strategy cumulative preferred equity, indirectly Bitcoin-exposed). Single-asset concentration risk. Permissioned underlying: USDat mint/redeem requires Saturn KYC onboarding, so non-KYC'd liquidators must exit via secondary markets. Upgradeable proxy. 7-day delayed redemption with limit-order mechanics. 30-day yield vesting prevents front-running. New protocol (launched 2026), limited track record. Key risks documented: BTC price shock and STRC dividend deferral. Curve pool depth ~$76K ±2% — large liquidations may face slippage.",
+  "sources": [
+    {
+      "label": "Etherscan",
+      "url": "https://etherscan.io/token/0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+    },
+    {
+      "label": "Saturn Documentation",
+      "url": "https://saturncredit.gitbook.io/saturn-docs"
+    },
+    {
+      "label": "Saturn Website",
+      "url": "https://saturn.credit"
+    },
+    {
+      "label": "CoinGecko",
+      "url": "https://www.coingecko.com/en/coins/saturn-susdat"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x1eb7ac7ff00568b2c01636487ca938821e931e32",
+  "type": "chainlink-compatible",
+  "provider": "Chainlink",
+  "rank": 4,
+  "pricing": "sDOLA shares are converted to DOLA assets, then DOLA/USD is\n  divided by frxUSD/USD using custom capped (clamped) Chainlink feeds.",
+  "notes": "Uses standard factory deployment; incorporates ERC4626 vault\n  share-to-asset conversion and capped DOLA/frxUSD feeds to mitigate upside\n  manipulation risks.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.\n  io/address/0x1eb7ac7ff00568b2c01636487ca938821e931e32"
+    },
+    {
+      "label": "Factory contract",
+      "url": "https://etherscan.\n  io/address/0x3a7bb36ee3f3ee32a60e9f2b33c1e5f2e83ad766"
+    },
+    {
+      "label": "Morpho Oracles GitHub",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles"
+    }
+  ]
+}

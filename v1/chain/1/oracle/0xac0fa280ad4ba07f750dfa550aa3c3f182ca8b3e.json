@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xac0fa280ad4ba07f750dfa550aa3c3f182ca8b3e",
+  "type": "meta-oracle",
+  "provider": "Pendle + Apyx",
+  "rank": 3,
+  "pricing": "Pendle PT_TO_ASSET 30-minute TWAP prices PT-apyUSD as a discounted claim on apxUSD, then multiplies by Apyx capped collateralization ratio and divides by Chainlink USDC/USD.",
+  "notes": "Pendle leg is PT-to-apxUSD, not PT-to-apyUSD; PT-to-apxUSD executable pricing was close, while PT-to-apyUSD routes add conversion/liquidity effects. Main caveat is the custom upgradeable Apyx ratio adapter.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xac0fa280ad4ba07f750dfa550aa3c3f182ca8b3e#code"
+    },
+    {
+      "label": "Pendle PT oracle feed",
+      "url": "https://etherscan.io/address/0x115afecc3c69b70ff9e11266f8a549c50eb688f5#code"
+    },
+    {
+      "label": "Apyx capped collateralization adapter",
+      "url": "https://etherscan.io/address/0x2037a5eb67aa9b2fbf50042b724d8c4db80f23b4#code"
+    },
+    {
+      "label": "Morpho oracle docs",
+      "url": "https://docs.morpho.org/getting-started/resources/contracts/oracles/"
+    }
+  ]
+}

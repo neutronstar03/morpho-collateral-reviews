@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x9fb57943926749b49a644f237a28b491c9b465e0",
+  "symbol": "n-st-liUSD4w",
+  "name": "Notional Staking liUSD4w",
+  "type": "vault",
+  "protocol": "Notional Exponent / infiniFi",
+  "protocolUrl": "https://defillama.com/protocol/infinifi",
+  "rank": 2,
+  "redeem": "Notional Exponent vault share backed by infiniFi liUSD-4w. Exiting goes through Notional router/smart-withdrawal mechanics; the underlying liUSD-4w requires unbonding before receiving iUSD, and iUSD redemption to USDC depends on reserves or a redemption queue. Locked-iUSD is the junior first-loss tranche and can be slashed after realized protocol losses.",
+  "notes": "Onchain asset is USDC and yieldToken is liUSD-4w. Adds Notional vault/router complexity on top of infiniFi fractional-reserve, 4-week locked exposure, queue risk, and first-loss/slashing mechanics.",
+  "sources": [
+    {
+      "label": "Notional Exponent architecture",
+      "url": "https://blog.notional.finance/notional-exponent-how-it-works/"
+    },
+    {
+      "label": "Notional StakingStrategy source metadata",
+      "url": "https://repo.sourcify.dev/contracts/partial_match/1/0x48ba5c2ef57b45de7736345f7f4db67818002dab/metadata.json"
+    },
+    {
+      "label": "infiniFi developer summary",
+      "url": "https://docs.infinifi.xyz/dev-docs/summary"
+    },
+    {
+      "label": "infiniFi locking docs",
+      "url": "https://docs.infinifi.xyz/dev-docs/locking"
+    },
+    {
+      "label": "infiniFi funding docs",
+      "url": "https://docs.infinifi.xyz/dev-docs/funding"
+    },
+    {
+      "label": "infiniFi slashing mechanics",
+      "url": "https://docs.infinifi.xyz/slashing-mechanics"
+    },
+    {
+      "label": "DefiLlama infiniFi",
+      "url": "https://defillama.com/protocol/infinifi"
+    }
+  ]
+}

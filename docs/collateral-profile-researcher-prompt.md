@@ -2,6 +2,9 @@
 
 Use this prompt with another agent when you want a first-pass collateral profile for a token.
 
+This prompt is only for collateral review files under `v1/chain/{chainId}/{collateralAddress}.json`.
+For oracle review files under `v1/chain/{chainId}/oracle/{oracleAddress}.json`, use [`docs/oracle-market-researcher-prompt.md`](./oracle-market-researcher-prompt.md).
+
 Add at the bottom available tools, suggested ones:
 ```text
 Additional tools at your disposal:

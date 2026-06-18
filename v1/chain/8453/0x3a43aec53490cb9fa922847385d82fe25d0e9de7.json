@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "chainId": 8453,
+  "collateralAddress": "0x3a43aec53490cb9fa922847385d82fe25d0e9de7",
+  "symbol": "yoETH",
+  "name": "yoVaultETH",
+  "type": "vault",
+  "protocol": "YO Protocol",
+  "protocolUrl": "https://defillama.com/protocol/yo-protocol",
+  "rank": 3,
+  "redeem": "No KYC. Instant onchain redemption via ERC-4626 when the vault has idle liquidity (typically under 5% of TVL). Larger redemptions are queued and settled automatically within 24 hours — yoETH is burned on request and assets sent when filled. No lock-up periods. Withdraw fees apply.",
+  "notes": "ERC-4626 yield-bearing vault on an upgradeable proxy (10+ upgrades since deployment). Underlying is WETH deployed across DeFi strategies on Base and Ethereum. Uses Exponential.fi risk ratings for strategy allocations. Deposits can be paused by protocol admin. Audited. Backed by $10M Series A (Foundation Capital, Coinbase Ventures, Scribble Ventures, Launchpad Capital). ~$30.6M TVL on Base.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://yo.xyz"
+    },
+    {
+      "label": "Documentation",
+      "url": "https://docs.yo.xyz"
+    },
+    {
+      "label": "BaseScan (token)",
+      "url": "https://basescan.org/token/0x3a43aec53490cb9fa922847385d82fe25d0e9de7"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/yoprotocol"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/yo-protocol"
+    }
+  ]
+}

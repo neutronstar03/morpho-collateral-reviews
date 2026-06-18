@@ -8,16 +8,16 @@
   "protocol": "Apyx Protocol",
   "protocolUrl": "https://defillama.com/protocol/apyx-protocol",
   "rank": 2,
-  "redeem": "General users can exit through secondary markets and liquidity pools. Protocol mint/redemption is for eligible whitelisted participants in permitted jurisdictions; redemptions settle in USDC, not preferred shares, and liquidity may be more limited outside traditional trading hours and weekends.",
-  "notes": "Synthetic dollar backed by offchain DAT preferred shares. Clear official docs and DefiLlama coverage, but redemption is permissioned and backing depends on offchain credit/equity assets; token contract is upgradeable with pause and denylist controls.",
+  "redeem": "Permissioned: only whitelisted institutions in permitted jurisdictions can mint or redeem apxUSD directly for USDC (via liquidation of preferred share collateral). General users exit through secondary markets and DEX liquidity pools; liquidity may be thin and limited outside traditional trading hours. apyUSD (yield wrapper) requires a ~20-day unlock cooldown to convert back to apxUSD. Not available to US, EU, or EEA persons.",
+  "notes": "Synthetic dollar backed by offchain DAT preferred shares (e.g., Strategy STRC). Overcollateralized with PCAOB-registered audit attestations (Wolf & Company), daily NAV dashboards, and audits by Zellic, Certora, Quantstamp. Token contract is UUPS upgradeable with pause and denylist controls. Supported by publicly-listed DeFi Development Corp (Nasdaq: DFDV). Key concerns: permissioned exit, geo-restrictions, equity-based collateral correlated to Bitcoin, and early-stage secondary liquidity.",
   "sources": [
     {
-      "label": "Apyx apxUSD docs",
-      "url": "https://docs.apyx.fi/product-overview/apxusd-overview"
+      "label": "Official site",
+      "url": "https://apyx.fi"
     },
     {
-      "label": "Official site",
-      "url": "https://apyx.fi/"
+      "label": "Documentation",
+      "url": "https://docs.apyx.fi"
     },
     {
       "label": "DefiLlama protocol",
@@ -28,8 +28,12 @@
       "url": "https://defillama.com/stablecoin/apxusd"
     },
     {
-      "label": "Apyx contract documentation",
+      "label": "Contract docs (NatSpec)",
       "url": "https://apyx-labs.github.io/evm-contracts/src/ApxUSD.sol/contract.ApxUSD.html"
+    },
+    {
+      "label": "Etherscan",
+      "url": "https://etherscan.io/token/0x98a878b1cd98131b271883b390f68d2c90674665"
     }
   ]
 }

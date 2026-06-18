@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x7a5628d0f541c697d7e9bd7dc5a0598b306c13fc",
+  "type": "chainlink-compatible",
+  "provider": "Redstone",
+  "rank": 3,
+  "pricing": "pufETH/ETH via Redstone MergedAdapterWithRounds feed, WETH treated as identity.",
+  "notes": "Immutable MorphoChainlinkOracleV2 wrapper with a single Redstone pufETH/ETH feed (dataFeedId: pufETH/ETH) on the base side and no feeds on the quote side. The Redstone adapter is an upgradeable TransparentUpgradeableProxy — admin can swap the implementation. Feeds are push-based and currently updated roughly daily (~13h ago); if Redstone relayers stop posting, the feed goes stale with no backup. The pufETH rate is also directly verifiable on-chain via the vault's convertToAssets(). Single feed, no redundancy.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0x7a5628d0f541c697d7e9bd7dc5a0598b306c13fc"
+    },
+    {
+      "label": "Redstone feed (proxy)",
+      "url": "https://etherscan.io/address/0x76a495b0bffb53ef3f0e94ef0763e03ce410835c"
+    },
+    {
+      "label": "Redstone feed (implementation)",
+      "url": "https://etherscan.io/address/0xa41107f9259bb835275eacaad8048307b80d7c00"
+    },
+    {
+      "label": "Redstone docs",
+      "url": "https://docs.redstone.finance"
+    }
+  ]
+}

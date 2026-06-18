@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0x16931dcc888754ae780b153598376a6474de4440",
+  "type": "custom-adapter",
+  "provider": "f(x) Protocol",
+  "rank": 2,
+  "pricing": "fxsave/usd comes from a custom adapter that returns `savingfxusd.nav()`, and morpho treats usdc as $1 by using no quote feed.",
+  "notes": "Single custom feed with no freshness metadata (`latestRoundData().updatedAt = 0`); usdc is hardcoded to parity; fxsave is a transparent upgradeable proxy whose nav logic can be changed by governance via a 3-day timelock.",
+  "sources": [
+    {
+      "label": "Morpho oracle contract",
+      "url": "https://etherscan.io/address/0x16931dcc888754ae780b153598376a6474de4440#code"
+    },
+    {
+      "label": "NAV adapter source",
+      "url": "https://sourcify.dev/server/files/any/1/0x9dd65b6d956e31f4dc093372d975275986695827"
+    },
+    {
+      "label": "fxSAVE token proxy",
+      "url": "https://etherscan.io/address/0x7743e50f534a7f9f1791dde7dcd89f7783eefc39#code"
+    },
+    {
+      "label": "Morpho oracle source",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    }
+  ]
+}

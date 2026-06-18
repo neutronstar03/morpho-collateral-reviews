@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0xc824a08db624942c5e5f330d56530cd1598859fd",
+  "symbol": "hgETH",
+  "name": "High Growth ETH",
+  "type": "vault",
+  "protocol": "Upshift",
+  "protocolUrl": "https://defillama.com/protocol/upshift",
+  "rank": 1,
+  "redeem": "Withdrawals are currently disabled onchain for hgETH, so holders cannot redeem through the normal Upshift vault flow while the pause remains active. This should be reevaluated if withdrawals are unlocked/re-enabled.",
+  "notes": "Official docs identify this as the Mainnet Kelp High Growth hgETH pool. Both deposits and withdrawals are paused onchain, with no vault-specific public explanation or unpause timeline found; treat as high risk until exits resume.",
+  "sources": [
+    {
+      "label": "Official site",
+      "url": "https://www.upshift.finance/"
+    },
+    {
+      "label": "Upshift docs",
+      "url": "https://docs.upshift.finance/"
+    },
+    {
+      "label": "Deployed contracts",
+      "url": "https://docs.upshift.finance/resources/deployed-contracts/upshift-partner-pools.md"
+    },
+    {
+      "label": "Vault interface",
+      "url": "https://docs.upshift.finance/developer-docs/vault-contract-interface.md"
+    },
+    {
+      "label": "Risk management framework",
+      "url": "https://docs.upshift.finance/vault-architecture/risk-management-framework.md"
+    },
+    {
+      "label": "DefiLlama",
+      "url": "https://defillama.com/protocol/upshift"
+    },
+    {
+      "label": "Etherscan token page",
+      "url": "https://etherscan.io/token/0xc824A08dB624942c5E5F330d56530cD1598859fD"
+    },
+    {
+      "label": "Pause transaction",
+      "url": "https://etherscan.io/tx/0xec9de389a42cc3213fd1d95243a1caa3812574acb0a8012407a57411aa48fcef"
+    }
+  ]
+}

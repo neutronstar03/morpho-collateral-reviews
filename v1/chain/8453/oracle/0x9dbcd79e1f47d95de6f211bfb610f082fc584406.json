@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 8453,
+  "oracleAddress": "0x9dbcd79e1f47d95de6f211bfb610f082fc584406",
+  "type": "pyth",
+  "provider": "Pyth",
+  "rank": 0,
+  "pricing": "weETH/USD from Pyth divided by USDC/USD from Pyth, both via PythAggregatorV3 Chainlink-compatible adapters, scaled to 1e36.",
+  "notes": "BROKEN: Pyth BASE_FEED_1 (weETH/USD at 0x4429b7...) was last updated 62 days ago (2026-03-22) as of 2026-05-24. The PythAggregatorV3 does not enforce staleness — latestRoundData() silently returns multi-month-old prices without reverting. MorphoChainlinkOracleV2 performs no independent freshness check. This means the oracle price is frozen at a 2-month-old value and will not reflect real-time weETH movements until a keeper pushes a Pyth update on-chain. During any weETH volatility, positions can go deeply underwater without triggering liquidations. The 62-day observation is a live on-chain fact, not hypothetical. Avoid this oracle until staleness is addressed.",
+  "sources": [
+    {
+      "label": "Oracle contract (BaseScan)",
+      "url": "https://basescan.org/address/0x9dbcd79e1f47d95de6f211bfb610f082fc584406"
+    },
+    {
+      "label": "Stale PythAggregatorV3 base feed (last updated 2026-03-22)",
+      "url": "https://basescan.org/address/0x4429b7c2a044dd41fb8ca64d64398e8ef37814e4"
+    },
+    {
+      "label": "Fresh PythAggregatorV3 quote feed",
+      "url": "https://basescan.org/address/0x4af3e0d3a45ac89234f5deac723d5ee6c0224de3"
+    },
+    {
+      "label": "Morpho Blue market",
+      "url": "https://app.morpho.org/base/market/0xa4e2843486610e6851f4e0a8fcdee819958598c71c7e99b0315904ccf162ddc3"
+    }
+  ]
+}

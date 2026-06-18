@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xc28f86c86f79282e2d2a1f45442339c55f7eb22d",
+  "type": "erc4626-vault",
+  "provider": "ERC4626",
+  "rank": 2,
+  "pricing": "ynETHx vault convertToAssets(1e18) multiplied by SCALE_FACTOR (1e18); all four Chainlink feed slots and the quote vault are zero, so price reduces to vault's internal ETH-per-share conversion with no external oracle verification.",
+  "notes": "Purely vault-based ERC4626 pricing — none of the four Chainlink feed slots are populated. ynETHx is a TransparentUpgradeableProxy (admin at 0xa02a8d), so convertToAssets logic can be changed by YieldNest. No circuit breaker or secondary price source. MorphoChainlinkOracleV2 itself is non-upgradeable.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xc28f86c86f79282e2d2a1f45442339c55f7eb22d#code"
+    },
+    {
+      "label": "ynETHx vault",
+      "url": "https://etherscan.io/address/0x657d9aba1dbb59e53f9f3ecaa878447dcfc96dcb#code"
+    },
+    {
+      "label": "Oracle source (GitHub)",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    }
+  ]
+}
