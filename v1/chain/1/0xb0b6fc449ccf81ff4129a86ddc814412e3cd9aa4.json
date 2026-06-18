@@ -1,0 +1,36 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xb0b6fc449ccf81ff4129a86ddc814412e3cd9aa4",
+  "type": "chainlink-compatible",
+  "provider": "RedStone",
+  "rank": 3,
+  "pricing": "msY is priced from RedStone's MSY_FUNDAMENTAL/USD Chainlink-compatible feed, with USDC treated as $1.",
+  "notes": "Single-feed MorphoChainlinkOracleV2 route; feed updated at 2026-06-18 11:48:23 UTC. Caveats: RedStone fundamental feed is specialized, feed and adapter are upgradeable proxies, and the route hardcodes the USDC/USD peg.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xb0b6fc449ccf81ff4129a86ddc814412e3cd9aa4"
+    },
+    {
+      "label": "Oracle source on Sourcify",
+      "url": "https://repo.sourcify.dev/contracts/full_match/1/0xB0b6Fc449CcF81Ff4129A86ddc814412E3Cd9Aa4/metadata.json"
+    },
+    {
+      "label": "RedStone feed contract",
+      "url": "https://etherscan.io/address/0xcb62f468b5724b7748293fc78e42c3da840a8338"
+    },
+    {
+      "label": "RedStone feed implementation source",
+      "url": "https://repo.sourcify.dev/contracts/full_match/1/0x89621c11aad52c1535e36eb9dbf43e638e9a3e9a/sources/contracts/ethereumMultiFeed/EthereumPriceFeedMsyFundamentalusdWithoutRoundsV1.sol"
+    },
+    {
+      "label": "Morpho oracle docs",
+      "url": "https://docs.morpho.org/get-started/resources/contracts/oracles/"
+    },
+    {
+      "label": "RedStone push model docs",
+      "url": "https://docs.redstone.finance/docs/dapps/redstone-push/"
+    }
+  ]
+}
