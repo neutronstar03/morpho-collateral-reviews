@@ -1,0 +1,28 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xb1e676190a86da2cb99afd0496538abe1d4c164d",
+  "type": "erc4626-vault",
+  "provider": "ERC4626 + Morpho",
+  "rank": 2,
+  "pricing": "ynETHx shares are converted to WETH via ERC-4626 convertToAssets(1e8), then divided by Morpho's wstETH/stETH exchange-rate adapter and scaled to 1e36.",
+  "notes": "Base value depends on ynETHx vault accounting; ynETHx is an EIP-1967 proxy, so accounting logic can change. Quote leg is Morpho's deterministic wstETH/stETH adapter; latestRoundData returns zero timestamps, so there is no heartbeat freshness signal. MorphoChainlinkOracleV2 itself is immutable.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xb1e676190a86da2cb99afd0496538abe1d4c164d#code"
+    },
+    {
+      "label": "Morpho oracle docs",
+      "url": "https://docs.morpho.org/get-started/resources/contracts/oracles/"
+    },
+    {
+      "label": "Oracle source",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    },
+    {
+      "label": "ynETHx docs",
+      "url": "https://docs.yieldnest.finance/protocol-design/max-vaults/yneth-max-ynethx"
+    }
+  ]
+}
