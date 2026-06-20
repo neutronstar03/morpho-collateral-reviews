@@ -1,0 +1,32 @@
+{
+  "version": "1.1",
+  "chainId": 1,
+  "oracleAddress": "0xb0b6fc449ccf81ff4129a86ddc814412e3cd9aa4",
+  "type": "redstone",
+  "provider": "RedStone",
+  "rank": 3,
+  "pricing": "Prices msY in USDC using the RedStone MSY_FUNDAMENTAL/USD feed, with USDC treated as $1 through zero quote feeds.",
+  "notes": "Simple MorphoChainlinkOracleV2 route, but it relies on a RedStone fundamental feed and a hardcoded USDC peg. Freshness checked: latestRoundData updatedAt 2026-06-19T23:48:59Z, about 9.6h old at review.",
+  "sources": [
+    {
+      "label": "Oracle contract",
+      "url": "https://etherscan.io/address/0xb0b6fc449ccf81ff4129a86ddc814412e3cd9aa4#code"
+    },
+    {
+      "label": "RedStone MSY feed contract",
+      "url": "https://etherscan.io/address/0xcb62f468b5724b7748293fc78e42c3da840a8338#readContract"
+    },
+    {
+      "label": "MorphoChainlinkOracleV2 source",
+      "url": "https://github.com/morpho-org/morpho-blue-oracles/blob/main/src/morpho-chainlink/MorphoChainlinkOracleV2.sol"
+    },
+    {
+      "label": "RedStone data types",
+      "url": "https://docs.redstone.finance/docs/data/data-types/"
+    },
+    {
+      "label": "Chainlink AggregatorV3Interface",
+      "url": "https://docs.chain.link/data-feeds/api-reference"
+    }
+  ]
+}
