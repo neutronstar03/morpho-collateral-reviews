@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x23238f20b894f29041f48d88ee91131c395aaa71",
+  "symbol": "USDat",
+  "name": "USDat",
+  "type": "stablecoin",
+  "protocol": "Saturn",
+  "protocolUrl": "https://defillama.com/protocol/saturn",
+  "rank": 3,
+  "redeem": "Only Saturn-onboarded addresses can mint, redeem, or directly hold USDat. They may mint with USDC or M0's $M through Saturn and redeem to USDC; other holders need secondary-market liquidity, for which no guaranteed issuer exit is documented.",
+  "notes": "Non-yielding USDat is documented as fully collateralized by M0's $M tokenized U.S. Treasury product. Material risks are permissioned issuance/redemption, issuer and reserve operations, and the absence of a documented permissionless primary exit.",
+  "sources": [
+    {
+      "label": "Saturn USDat overview",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/solution/usdat-overview"
+    },
+    {
+      "label": "Saturn key addresses",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/operations-and-governance/key-addresses"
+    },
+    {
+      "label": "Saturn transparency and audits",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/operations-and-governance/transparency-and-audits"
+    },
+    {
+      "label": "DefiLlama Saturn",
+      "url": "https://defillama.com/protocol/saturn"
+    }
+  ]
+}

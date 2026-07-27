@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chainId": 143,
+  "collateralAddress": "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
+  "symbol": "USDat",
+  "name": "Saturn USD",
+  "type": "stablecoin",
+  "protocol": "Saturn",
+  "protocolUrl": "https://defillama.com/protocol/saturn",
+  "rank": 2,
+  "redeem": "Saturn lists this as its cross-chain USDat contract on Monad. Saturn documents direct minting and redemption with USDC or M0's $M only through its onboarded canonical issuance flow; a Monad-local issuer redemption route is not documented. Exit therefore depends on secondary liquidity or a separately supported cross-chain route.",
+  "notes": "This is USDat, not the supplied Pendle PT. The documented canonical USDat contract is on Ethereum, so the Monad representation adds cross-chain transport and local-liquidity risk to the underlying permissioned stablecoin risk.",
+  "sources": [
+    {
+      "label": "Saturn key addresses",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/operations-and-governance/key-addresses"
+    },
+    {
+      "label": "Saturn USDat overview",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/solution/usdat-overview"
+    },
+    {
+      "label": "Saturn token design",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/solution/how-usdat-and-susdat-works"
+    },
+    {
+      "label": "DefiLlama Saturn",
+      "url": "https://defillama.com/protocol/saturn"
+    }
+  ]
+}

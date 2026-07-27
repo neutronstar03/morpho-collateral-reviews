@@ -27,10 +27,17 @@ Goal:
 Research the token and return a simple JSON object that can be used by a UI component showing a manually curated collateral profile.
 
 Research instructions:
-1. Identify the token and the protocol/project behind it.
-2. Prefer official sources over third-party summaries.
-3. Find the best DefiLlama page for the protocol when possible.
-4. Determine a simple token type such as:
+1. Identify the token on the requested chain first (address, name, symbol, decimals).
+2. If the user asks for the original, underlying, or accounting collateral, resolve wrappers before selecting the review target:
+   - Pendle PT: call `SY()`, then the SY's `yieldToken()` or `assetInfo()`.
+   - ERC-4626 share: call `asset()`.
+   - Bridged/wrapped token: use official docs to identify the canonical token, but keep the target-chain representation separate.
+   - If the user did not explicitly request the underlying asset, review the supplied collateral address and note its wrapper relationship instead of silently substituting it.
+   - If mainnet coverage is requested too, create a distinct chain-1 profile using the mainnet address; never copy a cross-chain address into the mainnet path.
+3. Identify the protocol/project behind the selected token.
+4. Prefer official sources over third-party summaries.
+5. Find the best DefiLlama page for the protocol when possible.
+6. Determine a simple token type such as:
    - `bond`
    - `delta neutral strategy`
    - `vault`
@@ -40,18 +47,19 @@ Research instructions:
    - `wrapped asset`
    - `rwa`
    - `other`
-5. Summarize redemption / exit characteristics in plain language.
+7. Summarize redemption / exit characteristics in plain language.
    - Do not force a rigid structure.
    - Mention KYC, business-day delays, issuer redemption, offchain processes, lockups, or instant onchain exit only if supported by sources.
-6. Assign a `rank` from 1 to 5 as a quick reviewer score.
+   - For bridged representations, say whether a local issuer-redemption route is documented; do not assume that it is.
+8. Assign a `rank` from 1 to 5 as a quick reviewer score.
    - `1` = very weak / avoid
    - `2` = concerning / many caveats
    - `3` = mixed / acceptable with caveats
    - `4` = solid / understandable structure
    - `5` = very strong / simple and transparent
-7. Add short notes that would help a human reviewing the collateral.
-8. Never invent facts.
-9. If something is unknown, use `null`.
+9. Add short notes that would help a human reviewing the collateral.
+10. Never invent facts.
+11. If something is unknown, use `null`.
 
 Return JSON only.
 
