@@ -201,3 +201,20 @@ The agent prompt used to produce first-pass review files lives here:
 
 CI setup is provided in `docs/ci-validation.example.yml`. The Loop token cannot
 create Actions workflows without the GitHub workflow scope; CI is not installed.
+
+## Authoritative decision publication (MBM #5)
+
+The review object stores `decision` and `reason`; `python3 scripts/validate.py
+--write-index` produces committed `decisions.v1.json` from valid canonical collateral
+resources only. The default validator rejects a missing/stale index. Commit evidence
+and index together. Legacy/unclassified and oracle resources never enter it. MBM
+fetches the manifest every five minutes and its positive-only compatibility endpoint
+has a five-minute edge TTL; raw GitHub/browser caches can add propagation delay.
+Do not hand-edit the index. To record a negative decision before every consumer has
+upgraded, first make the durable MBM asset blacklist effective. The Dot must verify
+the real consuming version before closing a research issue; a source push alone is
+not evidence that an unreleased application already runs the new consumer.
+
+`legacy-unclassified.v1.json` freezes the historical unclassified paths; this is a
+migration list, never an approval list. New collateral artifacts require explicit
+decisions. Do not add new paths to the legacy list to bypass classification.

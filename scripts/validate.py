@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 PATH = re.compile(r"v1/chain/([1-9][0-9]*)/(oracle/)?(0x[a-f0-9]{40})\.json")
 
 
-def validate(path, data):
+def validate(path, data, allow_legacy=False):
     errors = []
     match = PATH.fullmatch(path)
     if not match:
@@ -17,7 +17,8 @@ def validate(path, data):
         return ["review must be an object"]
     chain, oracle, address = match.groups()
     identity = "oracleAddress" if oracle else "collateralAddress"
-    if data.get("version") != ("1.1" if oracle else 1):
+    if (type(data.get("version")) is not (str if oracle else int)
+            or data.get("version") != ("1.1" if oracle else 1)):
         errors.append("unsupported resource version")
     if type(data.get("chainId")) is not int or data["chainId"] != int(chain):
         errors.append("chainId must match path")
@@ -51,6 +52,8 @@ def validate(path, data):
                 errors.append("invalid source URL")
     # Legacy descriptive artifacts remain readable, but confer no binary decision.
     # Never manufacture decisions by assigning a threshold to rank.
+    if not oracle and "decision" not in data and not allow_legacy:
+        errors.append("completed collateral review requires an explicit decision")
     if "decision" in data or "reason" in data:
         if oracle or data.get("decision") not in ("whitelist", "blacklist"):
             errors.append("invalid collateral decision")
@@ -59,22 +62,51 @@ def validate(path, data):
     return errors
 
 
+def build_manifest(root):
+    entries = []
+    legacy_file = root / "legacy-unclassified.v1.json"
+    legacy = json.loads(legacy_file.read_text()) if legacy_file.exists() else []
+    for path in sorted((root / "v1").rglob("*.json")):
+        relative = path.relative_to(root).as_posix()
+        data = json.loads(path.read_text())
+        errors = validate(relative, data, allow_legacy=relative in legacy)
+        if errors:
+            raise ValueError(f"{relative}: {errors}")
+        if "oracleAddress" not in data and "decision" in data:
+            entries.append({key: data[key] for key in
+                            ("chainId", "collateralAddress", "decision", "reason")}
+                           | {"reviewPath": relative})
+    return {"version": 1, "decisions": entries}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--write-index", action="store_true", help="regenerate explicit decisions only")
     args = parser.parse_args()
     failures = 0
+    legacy_file = args.root / "legacy-unclassified.v1.json"
+    legacy = json.loads(legacy_file.read_text()) if legacy_file.exists() else []
     paths = sorted((args.root / "v1").rglob("*.json"))
     if not paths:
         parser.error("no review artifacts found")
     for path in paths:
         try:
-            errors = validate(path.relative_to(args.root).as_posix(), json.loads(path.read_text()))
+            errors = validate(path.relative_to(args.root).as_posix(), json.loads(path.read_text()),
+                              allow_legacy=path.relative_to(args.root).as_posix() in legacy)
         except (ValueError, OSError) as error:
             errors = [str(error)]
         for error in errors:
             print(f"{path.relative_to(args.root)}: {error}")
         failures += bool(errors)
+    if not failures:
+        expected = json.dumps(build_manifest(args.root), indent=2) + "\n"
+        target = args.root / "decisions.v1.json"
+        if args.write_index:
+            target.write_text(expected)
+        elif not target.exists() or target.read_text() != expected:
+            print("decisions.v1.json is missing/stale; run with --write-index")
+            failures += 1
     print(f"Validated {len(paths)} reviews; {failures} invalid")
     return bool(failures)
 

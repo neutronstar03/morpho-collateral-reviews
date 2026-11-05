@@ -1,6 +1,9 @@
 import copy
 import unittest
-from scripts.validate import validate
+from scripts.validate import build_manifest, validate
+import json
+import tempfile
+from pathlib import Path
 
 ADDRESS = "0x" + "a" * 40
 PATH = f"v1/chain/1/{ADDRESS}.json"
@@ -11,7 +14,7 @@ REVIEW = dict(version=1, chainId=1, collateralAddress=ADDRESS, symbol=None,
 
 class ValidationTests(unittest.TestCase):
     def test_nullable_and_additive_metadata(self):
-        self.assertEqual(validate(PATH, dict(REVIEW, bridging={"legacy": True})), [])
+        self.assertEqual(validate(PATH, dict(REVIEW, bridging={"legacy": True}), allow_legacy=True), [])
 
     def test_identity_and_kind(self):
         for changes in [dict(chainId=2), dict(collateralAddress="0x" + "b" * 40),
@@ -30,6 +33,24 @@ class ValidationTests(unittest.TestCase):
             self.assertEqual(validate(PATH, dict(REVIEW, decision=decision, reason="Evidence")), [])
         self.assertTrue(validate(PATH, dict(REVIEW, decision="unknown", reason="Evidence")))
         self.assertTrue(validate(PATH, dict(REVIEW, decision="blacklist")))
+
+    def test_index_requires_explicit_decision_and_is_repeatable(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            path = root / PATH
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps(REVIEW))
+            with self.assertRaises(ValueError):
+                build_manifest(root)
+            (root / "legacy-unclassified.v1.json").write_text(json.dumps([PATH]))
+            self.assertEqual(build_manifest(root)["decisions"], [])
+            path.write_text(json.dumps(dict(REVIEW, decision="blacklist", reason="Insufficient evidence")))
+            manifest = build_manifest(root)
+            self.assertEqual(manifest, build_manifest(root))
+            self.assertEqual(manifest["decisions"][0]["decision"], "blacklist")
+            path.write_text(json.dumps(dict(REVIEW, chainId=2)))
+            with self.assertRaises(ValueError):
+                build_manifest(root)
 
     def test_oracle_zero_is_valid_but_not_collateral_approval(self):
         oracle = dict(version="1.1", chainId=1, oracleAddress=ADDRESS, type="pyth",
