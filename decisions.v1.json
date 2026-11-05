@@ -9,6 +9,13 @@
       "reviewPath": "v1/chain/1/0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702.json"
     },
     {
+      "chainId": 1,
+      "collateralAddress": "0x4e72025984424e52838cf8953e2863eff036b67a",
+      "decision": "whitelist",
+      "reason": "Positive identity/structure/exit assessment with material caveats: the Ethereum token and registered redemption vault match official sources and read-only calls. The Wellington-managed fixed-income exposure and issuer-operated standard/capacity-limited instant redemption are documented. Approval does not establish principal protection, guaranteed liquidity or universal investor eligibility.",
+      "reviewPath": "v1/chain/1/0x4e72025984424e52838cf8953e2863eff036b67a.json"
+    },
+    {
       "chainId": 143,
       "collateralAddress": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
       "decision": "blacklist",

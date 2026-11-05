@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x4e72025984424e52838cf8953e2863eff036b67a",
+  "symbol": "mWIN",
+  "name": "Midas Wellington Income Opportunities",
+  "type": "rwa",
+  "protocol": "Midas / Wellington",
+  "protocolUrl": "https://midas.app/mwin",
+  "rank": 3,
+  "decision": "whitelist",
+  "reason": "Positive identity/structure/exit assessment with material caveats: the Ethereum token and registered redemption vault match official sources and read-only calls. The Wellington-managed fixed-income exposure and issuer-operated standard/capacity-limited instant redemption are documented. Approval does not establish principal protection, guaranteed liquidity or universal investor eligibility.",
+  "redeem": "Midas identifies a dedicated Ethereum redemption vault. Official mWIN documentation describes standard redemption around T+1/T+2, subject to actual processing, and instant stablecoin redemption subject to fees and available capacity. The registered vault lists USDC and PYUSD as payment tokens. Eligibility, screening, limits, issuer/admin actions and offchain settlement remain dependencies; published timelines are not a guarantee.",
+  "notes": "The official product describes an actively managed, diversified credit portfolio including structured credit and corporate bonds, with Wellington as strategy manager, Northern Trust as stated custodian, and Aureum Securitisation Fund compartment mWIN as issuer. These are issuer statements, not an independent audit of reserves or legal enforceability. Midas source documents role-controlled mint/burn, pause/blacklist and admin-fulfilled requests. Token and registered vault paused() were false at observation. No wallet, transaction, live redemption quote or offchain asset verification was used.",
+  "observedAt": "2026-11-05",
+  "onchain": {
+    "rpc": "https://ethereum-rpc.publicnode.com",
+    "observedBlock": 26348349,
+    "decimals": 18,
+    "redemptionVault": "0x605704d7b36d1677a8d242ded68ed505523c7924",
+    "redemptionVaultMToken": "0x4e72025984424e52838cf8953e2863eff036b67a",
+    "tokenPaused": false,
+    "vaultPaused": false,
+    "paymentTokens": [
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "0x6c3ea9036406852006290770bedfcaba0e23a0e8"
+    ]
+  },
+  "sources": [
+    {
+      "label": "Official mWIN product, issuer and portfolio (rendered read-only)",
+      "url": "https://midas.app/mwin"
+    },
+    {
+      "label": "Official mWIN structure and redemption discussion, 2026-10-29",
+      "url": "https://blog.midas.app/mwin-a-home-for-treasury-runway/"
+    },
+    {
+      "label": "Official deployed Ethereum token and redemption vault registry",
+      "url": "https://docs.midas.app/resources/smart-contracts-registry"
+    },
+    {
+      "label": "Official redemption capacity, timing and emergency pause conditions",
+      "url": "https://docs.midas.app/liquidity-and-composability/open-liquidity-architecture"
+    },
+    {
+      "label": "Midas protocol source: controls and redemption mechanics (not an independent audit)",
+      "url": "https://github.com/midas-apps/contracts/blob/main/README.md"
+    },
+    {
+      "label": "Public Ethereum RPC: exact token and vault reads",
+      "url": "https://ethereum-rpc.publicnode.com"
+    }
+  ]
+}
