@@ -149,7 +149,8 @@ Each file should look like this:
 - `oracleAddress`: lowercase Morpho market oracle address.
 - `type`: short human-readable category such as `chainlink`, `chainlink-compatible`, `erc4626-vault`, `pendle`, `redstone`, `pyth`, `meta-oracle`, `custom-adapter`, or `unknown`.
 - `provider`: short provider/protocol label such as `Chainlink`, `API3`, `Redstone`, `Pendle`, `Pyth`, `Chronicle`, `Midas`, `ERC4626`, or `Unknown`.
-- `rank`: quick reviewer score from `1` to `5`.
+- `rank`: quick reviewer score from `0` to `5`.
+  - `0`: broken / stale data at the dated observation
   - `1`: very weak / opaque / avoid
   - `2`: concerning / unclear or risky oracle assumptions
   - `3`: mixed / acceptable with caveats
@@ -165,9 +166,38 @@ Notes on oracle scoring:
 - Prefer concise wording; MBM displays this in a compact frontend/mobile section.
 - If an oracle path is unknown or only partially understood, say so and score conservatively.
 
+## Validation and binary decisions
+
+Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests`.
+The validator checks every canonical collateral/oracle resource, identity, field type,
+rank and source URL. Nullable collateral facts and additive metadata are preserved.
+Oracle ranks support **0-5**; 0 records a broken/stale finding at the stated
+observation time. It is never a collateral classification.
+
+Completed collateral research must include `decision` (`whitelist` or `blacklist`)
+and a nonempty `reason`. A positive review must establish exact chain/token identity,
+structure, credible evidence and an understandable redemption/exit route. Every
+other completed review is blacklisted with the specific reason (fraud, unacceptable
+risk, or insufficient credible evidence after research). Do not call insufficient
+evidence proven fraud or infer a decision from rank. Pending research and transport
+errors are temporary workflow states, not final decisions.
+
+Legacy artifacts without these fields are descriptive research awaiting explicit
+classification. Validation permits them to preserve the corpus; their existence is
+not authorization to whitelist. Negative/unclassified research must never enter
+positive approval coverage. A decision is complete only after its durable producer
+and MBM consumer are integrated and verified (MBM issue #5). The Dot owns research,
+evidence publication and effective classification, preserving stronger exclusions.
+A negative decision must be effective before publishing evidence that an older
+path-only consumer could interpret as approval. Do not close a collateral issue
+until the actual MBM path reflects the decision and reason; document cache intervals.
+
 ## Research prompt
 
 The agent prompt used to produce first-pass review files lives here:
 
 - [docs/collateral-profile-researcher-prompt.md](./docs/collateral-profile-researcher-prompt.md)
 - [docs/oracle-market-researcher-prompt.md](./docs/oracle-market-researcher-prompt.md) for oracle reviews.
+
+CI setup is provided in `docs/ci-validation.example.yml`. The Loop token cannot
+create Actions workflows without the GitHub workflow scope; CI is not installed.

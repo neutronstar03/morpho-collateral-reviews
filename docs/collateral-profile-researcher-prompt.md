@@ -107,3 +107,15 @@ Validation checklist before replying:
 - Does `rank` roughly match the collateral's transparency and exit clarity?
 - Does `redeem` describe the real exit path without over-claiming?
 - Are uncertain facts represented as `null` or clearly softened?
+
+## Required binary completion and publication
+
+Include `decision`: `whitelist` or `blacklist`, and a nonempty evidence-based
+`reason` in each completed review. Whitelist requires positive verification of
+exact token identity, structure, credible evidence and redemption/exit. All other
+completed research is blacklisted; distinguish proven fraud, unacceptable risk,
+and insufficient credible evidence. Do not infer classification from rank or a
+single transport failure. Use null for unknown facts, never a third final decision.
+The maintenance Dot publishes the evidence AND durable effective classification
+through the MBM #5 contract, checks stronger exclusions, and verifies consumption
+before closing the issue. Do not publish negative/unclassified evidence as approval.

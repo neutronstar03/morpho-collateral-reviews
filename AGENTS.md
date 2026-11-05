@@ -13,3 +13,9 @@ commit or push.
 
 Keep commits focused on the review artifact or instruction change being made.
 Do not stage unrelated work.
+
+Research is complete only with an explicit whitelist/blacklist decision and reason,
+plus effective publication verified through MBM (policy/integration: MBM #5).
+Preserve stronger exclusions. Never infer approval from a filename or rank.
+Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests`
+before committing. Legacy descriptive reviews must not be silently classified.

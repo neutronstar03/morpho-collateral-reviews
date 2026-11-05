@@ -6,7 +6,7 @@
   "provider": "Pyth",
   "rank": 0,
   "pricing": "weETH/USD from Pyth divided by USDC/USD from Pyth, both via PythAggregatorV3 Chainlink-compatible adapters, scaled to 1e36.",
-  "notes": "BROKEN: Pyth BASE_FEED_1 (weETH/USD at 0x4429b7...) was last updated 62 days ago (2026-03-22) as of 2026-05-24. The PythAggregatorV3 does not enforce staleness — latestRoundData() silently returns multi-month-old prices without reverting. MorphoChainlinkOracleV2 performs no independent freshness check. This means the oracle price is frozen at a 2-month-old value and will not reflect real-time weETH movements until a keeper pushes a Pyth update on-chain. During any weETH volatility, positions can go deeply underwater without triggering liquidations. The 62-day observation is a live on-chain fact, not hypothetical. Avoid this oracle until staleness is addressed.",
+  "notes": "Historical warning recorded on 2026-05-24; not revalidated onchain on 2026-11-05. BROKEN: Pyth BASE_FEED_1 (weETH/USD at 0x4429b7...) was last updated 62 days ago (2026-03-22) as of 2026-05-24. The PythAggregatorV3 does not enforce staleness \u2014 latestRoundData() silently returns multi-month-old prices without reverting. MorphoChainlinkOracleV2 performs no independent freshness check. This means the oracle price is frozen at a 2-month-old value and will not reflect real-time weETH movements until a keeper pushes a Pyth update on-chain. During any weETH volatility, positions can go deeply underwater without triggering liquidations. The 62-day observation refers only to the recorded 2026-05-24 check and does not establish current feed freshness. Avoid this oracle until staleness is addressed.",
   "sources": [
     {
       "label": "Oracle contract (BaseScan)",
