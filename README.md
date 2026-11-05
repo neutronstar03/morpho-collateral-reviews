@@ -199,8 +199,9 @@ The agent prompt used to produce first-pass review files lives here:
 - [docs/collateral-profile-researcher-prompt.md](./docs/collateral-profile-researcher-prompt.md)
 - [docs/oracle-market-researcher-prompt.md](./docs/oracle-market-researcher-prompt.md) for oracle reviews.
 
-CI setup is provided in `docs/ci-validation.example.yml`. The Loop token cannot
-create Actions workflows without the GitHub workflow scope; CI is not installed.
+CI is installed in `.github/workflows/validate.yml` and runs the validator and
+fixture suite on pushes and pull requests. The Loop workflow scope was verified
+on 2026-11-05 before publishing this configuration.
 
 ## Authoritative decision publication (MBM #5)
 
