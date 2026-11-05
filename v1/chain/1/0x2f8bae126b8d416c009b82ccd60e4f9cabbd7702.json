@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702",
+  "symbol": "mGLOeuro",
+  "name": "Midas Fasanara Global Euro",
+  "type": "rwa",
+  "protocol": "Midas / Fasanara",
+  "protocolUrl": "https://midas.app/mgloeuro",
+  "rank": 3,
+  "decision": "whitelist",
+  "reason": "Positive identity/structure/exit assessment with material caveats: Ethereum token and registered redemption vault are matched by official sources and read-only calls. The euro-denominated Fasanara credit exposure and issuer-operated standard/capacity-limited instant redemption are documented. Approval does not imply guaranteed liquidity, principal protection or eligibility for every holder.",
+  "redeem": "The official product and registry identify a dedicated Ethereum redemption vault. Standard redemption depends on offchain settlement and NAV updates; instant redemption depends on fees, approved payment assets, available capacity and controls. Investor eligibility, screening, pauses and strategy-manager funding can delay or prevent an exit. There is no unconditional immediate EUR redemption guarantee.",
+  "notes": "Official product describes a euro-denominated claim linked to Fasanara Global Diversified Alternative Debt and names Aureum Securitisation Fund, Compartment mGLOeuro, as issuer. This is investment/credit exposure, not a euro stablecoin. Midas contracts implement role-controlled mint/burn, blacklist and pause controls, admin-fulfilled requests and limits. Token and registered vault paused() were false at observation; this is not assurance about future availability. No real-wallet call, redemption transaction, live quote, offchain reserve verification or independent audit conclusion was made.",
+  "observedAt": "2026-11-05",
+  "onchain": {
+    "rpc": "https://ethereum-rpc.publicnode.com",
+    "decimals": 18,
+    "redemptionVault": "0x1e9f04408ff38d1fb70ce939fc87d26d61f6f758",
+    "redemptionVaultMToken": "0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702",
+    "tokenPaused": false,
+    "vaultPaused": false,
+    "paymentTokens": [
+      "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+      "0x5f7827fdeb7c20b443265fc2f40845b715385ff2",
+      "0x888883b5f5d21fb10dfeb70e8f9722b9fb0e5e51"
+    ],
+    "instantFeeRaw": 50
+  },
+  "sources": [
+    {
+      "label": "Official product, issuer, investment cycle and exact contracts (rendered read-only)",
+      "url": "https://midas.app/mgloeuro"
+    },
+    {
+      "label": "Official deployed Ethereum token and redemption vault registry",
+      "url": "https://docs.midas.app/resources/smart-contracts-registry"
+    },
+    {
+      "label": "Official redemption capacity, timing and emergency pause conditions",
+      "url": "https://docs.midas.app/liquidity-and-composability/open-liquidity-architecture"
+    },
+    {
+      "label": "Midas protocol source: controls and redemption mechanics (not an independent audit)",
+      "url": "https://github.com/midas-apps/contracts/blob/main/README.md"
+    },
+    {
+      "label": "Public Ethereum RPC: exact token and vault reads",
+      "url": "https://ethereum-rpc.publicnode.com"
+    }
+  ]
+}

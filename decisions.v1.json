@@ -2,6 +2,13 @@
   "version": 1,
   "decisions": [
     {
+      "chainId": 1,
+      "collateralAddress": "0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702",
+      "decision": "whitelist",
+      "reason": "Positive identity/structure/exit assessment with material caveats: Ethereum token and registered redemption vault are matched by official sources and read-only calls. The euro-denominated Fasanara credit exposure and issuer-operated standard/capacity-limited instant redemption are documented. Approval does not imply guaranteed liquidity, principal protection or eligibility for every holder.",
+      "reviewPath": "v1/chain/1/0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702.json"
+    },
+    {
       "chainId": 143,
       "collateralAddress": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
       "decision": "blacklist",
