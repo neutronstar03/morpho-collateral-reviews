@@ -1,4 +1,12 @@
 {
   "version": 1,
-  "decisions": []
+  "decisions": [
+    {
+      "chainId": 143,
+      "collateralAddress": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
+      "decision": "blacklist",
+      "reason": "Insufficient verified exit evidence for this Monad representation: PT redemption returns SY/Monad USDat, while issuer documentation specifies Ethereum redemption routes. A usable Monad-local or supported cross-chain issuer exit and the associated controls were not established. This is an evidence-based exclusion, not a finding of fraud.",
+      "reviewPath": "v1/chain/143/0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147.json"
+    }
+  ]
 }

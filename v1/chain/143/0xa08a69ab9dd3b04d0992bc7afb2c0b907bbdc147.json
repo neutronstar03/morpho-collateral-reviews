@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "chainId": 143,
+  "collateralAddress": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
+  "symbol": "PT-USDat-14JAN2027",
+  "name": "PT Saturn USD 14JAN2027",
+  "type": "bond",
+  "protocol": "Pendle / Saturn",
+  "protocolUrl": "https://www.pendle.finance/",
+  "rank": 2,
+  "decision": "blacklist",
+  "reason": "Insufficient verified exit evidence for this Monad representation: PT redemption returns SY/Monad USDat, while issuer documentation specifies Ethereum redemption routes. A usable Monad-local or supported cross-chain issuer exit and the associated controls were not established. This is an evidence-based exclusion, not a finding of fraud.",
+  "redeem": "Pendle documents PT redemption through YT into SY after maturity; before maturity both PT and YT are required, or PT can be sold at an available market price. This PT expires 2027-01-14 00:00:00 UTC. Its SY lists Monad USDat as the sole output token. Ethereum USDat redemption terms do not establish a Monad-to-USDC exit; liquidity, bridge availability and issuer access remain dependencies.",
+  "notes": "Read-only Monad RPC checks on 2026-11-05 confirmed chain 143, token name/symbol/6 decimals, expiry 1799884800, SY, YT, yieldToken and assetInfo. The official Pendle integration registry matches this exact chain/address and Morpho market. SY owner() returns an address, but its controller composition and upgrade/pausing powers were not independently established. No redemption transaction, bridge quote, reserve attestation or executable exit-liquidity test was performed. Existing descriptive USDat coverage is not an approval of this PT.",
+  "observedAt": "2026-11-05",
+  "onchain": {
+    "rpc": "https://rpc.monad.xyz",
+    "observedBlockRange": [
+      119598907,
+      119599385
+    ],
+    "decimals": 6,
+    "expiry": 1799884800,
+    "SY": "0x0898c3346275e79db4892feb1c18875ec154f274",
+    "YT": "0x5aff25c86c7cb739e554be8904b32047738b7440",
+    "yieldToken": "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
+    "assetInfo": {
+      "assetType": 0,
+      "assetAddress": "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
+      "assetDecimals": 6
+    },
+    "tokensOut": [
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef"
+    ],
+    "syOwner": "0x2ad631f72fb16d91c4953a7f4260a97c2fe2f31e"
+  },
+  "sources": [
+    {
+      "label": "Pendle official exact-chain/token integration registry",
+      "url": "https://github.com/pendle-finance/external-integration/blob/main/config.json"
+    },
+    {
+      "label": "Pendle PT/YT redemption mechanics",
+      "url": "https://docs.pendle.finance/pendle-v2-dev/Contracts/YieldTokenization"
+    },
+    {
+      "label": "Saturn official cross-chain token addresses",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/operations-and-governance/key-addresses"
+    },
+    {
+      "label": "Saturn current USDat backing and Ethereum-only route scope",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/solution/usdat-overview"
+    },
+    {
+      "label": "Saturn issuer restrictions and administrative dependencies",
+      "url": "https://saturncredit.gitbook.io/saturn-docs/get-started/saturn-faqs"
+    },
+    {
+      "label": "Public Monad RPC: read-only chain and contract checks",
+      "url": "https://rpc.monad.xyz"
+    }
+  ]
+}
