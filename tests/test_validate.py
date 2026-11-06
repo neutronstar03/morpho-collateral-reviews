@@ -1,6 +1,6 @@
 import copy
 import unittest
-from scripts.validate import build_manifest, validate
+from scripts.validate import build_manifest, load_legacy, validate
 import json
 import tempfile
 from pathlib import Path
@@ -27,6 +27,34 @@ class ValidationTests(unittest.TestCase):
             self.assertTrue(validate(PATH, dict(REVIEW, rank=rank)))
         for sources in [None, [], [dict(label="x", url="javascript:bad")]]:
             self.assertTrue(validate(PATH, dict(REVIEW, sources=sources)))
+
+    def test_malformed_source_urls_are_validation_errors(self):
+        for url in ["https://[broken", "https://:443", "https://example.com:bad",
+                    "https://example.com:70000", "https://user@"]:
+            with self.subTest(url=url):
+                errors = validate(PATH, dict(REVIEW, decision="whitelist", reason="Evidence",
+                                             sources=[dict(label="Contract", url=url)]))
+                self.assertIn("invalid source URL", errors)
+        self.assertEqual(validate(PATH, dict(REVIEW, decision="whitelist", reason="Evidence",
+                                            sources=[dict(label="Contract", url="https://[::1]:443") ])), [])
+
+    def test_legacy_list_rejects_substring_membership_and_bad_shapes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            path = root / PATH
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps(REVIEW))
+            legacy_file = root / "legacy-unclassified.v1.json"
+            for legacy in [PATH, {PATH: True}, [PATH, PATH], [None],
+                           [PATH.upper()], [PATH.replace("/1/", "/2/")],
+                           [PATH.replace("/1/", "/1/oracle/")]]:
+                with self.subTest(legacy=legacy):
+                    legacy_file.write_text(json.dumps(legacy))
+                    with self.assertRaises(ValueError):
+                        build_manifest(root)
+            legacy_file.write_text(json.dumps([PATH]))
+            self.assertEqual(load_legacy(root), {PATH})
+            self.assertEqual(build_manifest(root)["decisions"], [])
 
     def test_explicit_binary_decision_independent_of_rank(self):
         for decision in ["whitelist", "blacklist"]:

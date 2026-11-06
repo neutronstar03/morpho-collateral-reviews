@@ -217,5 +217,7 @@ the real consuming version before closing a research issue; a source push alone 
 not evidence that an unreleased application already runs the new consumer.
 
 `legacy-unclassified.v1.json` freezes the historical unclassified paths; this is a
-migration list, never an approval list. New collateral artifacts require explicit
+migration list, never an approval list. Validation requires an array of unique,
+canonical, existing collateral paths; malformed migration lists fail validation.
+New collateral artifacts require explicit
 decisions. Do not add new paths to the legacy list to bypass classification.

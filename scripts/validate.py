@@ -47,8 +47,16 @@ def validate(path, data, allow_legacy=False):
                 errors.append("invalid source label")
                 continue
             url = source.get("url")
-            parsed = urlparse(url) if isinstance(url, str) else None
-            if not parsed or parsed.scheme not in ("http", "https") or not parsed.netloc:
+            try:
+                parsed = urlparse(url) if isinstance(url, str) else None
+                valid_url = (parsed is not None and parsed.scheme in ("http", "https")
+                             and bool(parsed.hostname))
+                if valid_url:
+                    # Accessing port also validates malformed or out-of-range ports.
+                    parsed.port
+            except ValueError:
+                valid_url = False
+            if not valid_url:
                 errors.append("invalid source URL")
     # Legacy descriptive artifacts remain readable, but confer no binary decision.
     # Never manufacture decisions by assigning a threshold to rank.
@@ -62,10 +70,28 @@ def validate(path, data, allow_legacy=False):
     return errors
 
 
+def load_legacy(root):
+    """Load exact, existing collateral paths; never accept substring membership."""
+    legacy_file = root / "legacy-unclassified.v1.json"
+    if not legacy_file.exists():
+        return set()
+    legacy = json.loads(legacy_file.read_text())
+    if not isinstance(legacy, list):
+        raise ValueError("legacy-unclassified.v1.json must be an array of paths")
+    paths = set()
+    for path in legacy:
+        match = PATH.fullmatch(path) if isinstance(path, str) else None
+        if not match or match.group(2) or not (root / path).is_file():
+            raise ValueError(f"invalid legacy collateral path: {path!r}")
+        if path in paths:
+            raise ValueError(f"duplicate legacy collateral path: {path}")
+        paths.add(path)
+    return paths
+
+
 def build_manifest(root):
     entries = []
-    legacy_file = root / "legacy-unclassified.v1.json"
-    legacy = json.loads(legacy_file.read_text()) if legacy_file.exists() else []
+    legacy = load_legacy(root)
     for path in sorted((root / "v1").rglob("*.json")):
         relative = path.relative_to(root).as_posix()
         data = json.loads(path.read_text())
@@ -85,8 +111,11 @@ def main():
     parser.add_argument("--write-index", action="store_true", help="regenerate explicit decisions only")
     args = parser.parse_args()
     failures = 0
-    legacy_file = args.root / "legacy-unclassified.v1.json"
-    legacy = json.loads(legacy_file.read_text()) if legacy_file.exists() else []
+    try:
+        legacy = load_legacy(args.root)
+    except (ValueError, OSError) as error:
+        print(f"Invalid legacy migration list: {error}")
+        return True
     paths = sorted((args.root / "v1").rglob("*.json"))
     if not paths:
         parser.error("no review artifacts found")
