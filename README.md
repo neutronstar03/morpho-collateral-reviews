@@ -170,7 +170,8 @@ Notes on oracle scoring:
 
 Run `python3 scripts/validate.py` and `python3 -m unittest discover -s tests`.
 The validator checks every canonical collateral/oracle resource, identity, field type,
-rank and source URL. Nullable collateral facts and additive metadata are preserved.
+rank and source URL. Duplicate object keys and nonstandard JSON constants (NaN
+and Infinity) are rejected, including in additive metadata. Nullable collateral facts and additive metadata are preserved.
 Oracle ranks support **0-5**; 0 records a broken/stale finding at the stated
 observation time. It is never a collateral classification.
 

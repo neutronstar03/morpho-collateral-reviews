@@ -8,6 +8,23 @@ from urllib.parse import urlparse
 PATH = re.compile(r"v1/chain/([1-9][0-9]*)/(oracle/)?(0x[a-f0-9]{40})\.json")
 
 
+def load_json(path):
+    """Reject ambiguous objects and constants unsupported by JSON consumers."""
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key: {key}")
+            result[key] = value
+        return result
+
+    def invalid_constant(value):
+        raise ValueError(f"invalid JSON constant: {value}")
+
+    return json.loads(path.read_text(), object_pairs_hook=unique_object,
+                      parse_constant=invalid_constant)
+
+
 def validate(path, data, allow_legacy=False):
     errors = []
     match = PATH.fullmatch(path)
@@ -75,7 +92,7 @@ def load_legacy(root):
     legacy_file = root / "legacy-unclassified.v1.json"
     if not legacy_file.exists():
         return set()
-    legacy = json.loads(legacy_file.read_text())
+    legacy = load_json(legacy_file)
     if not isinstance(legacy, list):
         raise ValueError("legacy-unclassified.v1.json must be an array of paths")
     paths = set()
@@ -94,7 +111,7 @@ def build_manifest(root):
     legacy = load_legacy(root)
     for path in sorted((root / "v1").rglob("*.json")):
         relative = path.relative_to(root).as_posix()
-        data = json.loads(path.read_text())
+        data = load_json(path)
         errors = validate(relative, data, allow_legacy=relative in legacy)
         if errors:
             raise ValueError(f"{relative}: {errors}")
@@ -121,7 +138,7 @@ def main():
         parser.error("no review artifacts found")
     for path in paths:
         try:
-            errors = validate(path.relative_to(args.root).as_posix(), json.loads(path.read_text()),
+            errors = validate(path.relative_to(args.root).as_posix(), load_json(path),
                               allow_legacy=path.relative_to(args.root).as_posix() in legacy)
         except (ValueError, OSError) as error:
             errors = [str(error)]

@@ -13,6 +13,30 @@ REVIEW = dict(version=1, chainId=1, collateralAddress=ADDRESS, symbol=None,
 
 
 class ValidationTests(unittest.TestCase):
+    def test_conflicting_duplicate_keys_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            path = root / PATH
+            path.parent.mkdir(parents=True)
+            valid = json.dumps(dict(REVIEW, decision="whitelist", reason="Evidence"))
+            for prefix in ['"decision": "blacklist",', '"chainId": 2,']:
+                with self.subTest(prefix=prefix):
+                    path.write_text("{" + prefix + valid[1:])
+                    with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
+                        build_manifest(root)
+
+    def test_nonstandard_constants_in_metadata_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            path = root / PATH
+            path.parent.mkdir(parents=True)
+            valid = json.dumps(dict(REVIEW, decision="whitelist", reason="Evidence"))
+            for constant in ["NaN", "Infinity", "-Infinity"]:
+                with self.subTest(constant=constant):
+                    path.write_text('{"metadata": ' + constant + ',' + valid[1:])
+                    with self.assertRaisesRegex(ValueError, "invalid JSON constant"):
+                        build_manifest(root)
+
     def test_nullable_and_additive_metadata(self):
         self.assertEqual(validate(PATH, dict(REVIEW, bridging={"legacy": True}), allow_legacy=True), [])
 
