@@ -16,6 +16,13 @@
       "reviewPath": "v1/chain/1/0x4e72025984424e52838cf8953e2863eff036b67a.json"
     },
     {
+      "chainId": 1,
+      "collateralAddress": "0x99cd4ec3f88a45940936f469e4bb72a2a701eeb9",
+      "decision": "blacklist",
+      "reason": "Sky Lockstake risk capital absorbs bad debt and can be slashed. Direct USDS redemption was severely constrained on 2026-11-21, and an executable secondary exit at the size of the observed Morpho positions was not established.",
+      "reviewPath": "v1/chain/1/0x99cd4ec3f88a45940936f469e4bb72a2a701eeb9.json"
+    },
+    {
       "chainId": 143,
       "collateralAddress": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
       "decision": "blacklist",
