@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x99cd4ec3f88a45940936f469e4bb72a2a701eeb9",
+  "symbol": "stUSDS",
+  "name": "Staked USDS",
+  "type": "vault",
+  "protocol": "Sky",
+  "protocolUrl": "https://info.skyeco.com/stUSDS",
+  "rank": 1,
+  "decision": "blacklist",
+  "reason": "Sky Lockstake risk capital absorbs bad debt and can be slashed. Direct USDS redemption was severely constrained on 2026-11-21, and an executable secondary exit at the size of the observed Morpho positions was not established.",
+  "redeem": "The ERC-4626 vault redeems shares for USDS subject to the amount available after outstanding Lockstake debt and amounts in auction. The share conversion rate measures vault accounting value and does not guarantee an executable exit. A secondary sale depends on available depth.",
+  "notes": "On Ethereum block 26464724 (2026-11-21 16:38:47 UTC), read-only calls confirmed the collateral and 86% LLTV for Morpho market 0xd570c19c0dc0fbe4ab7faf4a37c4150e1c141c8aada8ca3e1b4b6c1b712af93d. stUSDS reported 161.63 million USDS in total assets and about 1.08858 USDS per share. maxWithdraw returned zero for a large holder (0xee2826453a4fd5afeb7ceffeef3ffa2320081268). A separate Morpho API snapshot at 16:05:47 UTC reported 6.23 million USDC borrowed, 100% utilization, zero available USDC and zero realized bad debt in this market. Morpho describes the oracle as the fundamental stUSDS/USDS rate combined with USDS/USD and USDC/USD feeds. The risk decision rests on redemption constraints and the loss-absorbing design. Reassess against current liquidity and executable depth before changing the decision.",
+  "sources": [
+    {
+      "label": "Sky stUSDS contract documentation and trust assumptions",
+      "url": "https://github.com/sky-ecosystem/stusds"
+    },
+    {
+      "label": "Sky stUSDS reference implementation, including maxWithdraw and cut",
+      "url": "https://github.com/sky-ecosystem/stusds/blob/master/src/StUsds.sol"
+    },
+    {
+      "label": "Morpho Ethereum USDC / stUSDS market, oracle and activity",
+      "url": "https://app.morpho.org/ethereum/variable/0xd570c19c0dc0fbe4ab7faf4a37c4150e1c141c8aada8ca3e1b4b6c1b712af93d/usdc-stusds"
+    },
+    {
+      "label": "Onchain stUSDS contract",
+      "url": "https://etherscan.io/address/0x99cd4ec3f88a45940936f469e4bb72a2a701eeb9"
+    },
+    {
+      "label": "Ethereum snapshot block 26464724",
+      "url": "https://etherscan.io/block/26464724"
+    },
+    {
+      "label": "Spark Data Hub stUSDS liquidity and exposure",
+      "url": "https://data.spark.finance/savings/stusds"
+    }
+  ]
+}
