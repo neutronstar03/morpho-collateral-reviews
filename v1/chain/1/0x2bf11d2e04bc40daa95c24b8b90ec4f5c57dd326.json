@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "chainId": 1,
+  "collateralAddress": "0x2bf11d2e04bc40daa95c24b8b90ec4f5c57dd326",
+  "symbol": "CarryTradeUSDTRYLeverage",
+  "name": "Morini CarryTradeUSDTRYLeverage Vault",
+  "type": "rwa",
+  "protocol": "Morini Capital / Piku Finance",
+  "protocolUrl": "https://defillama.com/protocol/piku-finance",
+  "rank": 2,
+  "decision": "blacklist",
+  "reason": "Insufficient credible evidence for a reliable collateral exit: the legal claim on fund assets, liquidator eligibility and enforceable redemption terms are unverified, while redemptions depend on offchain fund settlement and privileged operators; leveraged, unhedged TRY exposure and uncertain secondary liquidity compound liquidation risk. This is not a finding of fraud.",
+  "redeem": "Piku describes redemption every two Turkish business days with T+2 fund-level settlement, subject to holidays; this is not an instant or guaranteed onchain exit. Piku calls the vault permissionless, but liquidator eligibility, settlement deadlines, fees, suspension rights and executable secondary liquidity remain unverified.",
+  "notes": "Piku describes a leveraged, unhedged TRY carry and USD/TRY futures strategy backed by fund ISIN TRYTALP00127; KAP identifies this as Aura Portfoy Dolunay Serbest Fon, not proof of tokenholder ownership or backing. The 18-decimal ERC-20 is an upgradeable proxy using Midas infrastructure: verified implementation exposes role-gated mint, burn and pause and blacklist checks on transfers. Current role holders, upgrade authority, collateral custody and the enforceable link to fund assets are unverified. Identity checked against Ethereum RPC on 2026-11-21 near block 26465616; Piku product page was available through a search index but direct fetch returned 403.",
+  "sources": [
+    {
+      "label": "Ethereum token proxy and verified contract",
+      "url": "https://eth.blockscout.com/address/0x2bf11d2e04bc40daa95c24b8b90ec4f5c57dd326?tab=contract"
+    },
+    {
+      "label": "Verified token implementation and inherited source",
+      "url": "https://eth.blockscout.com/address/0xF6c86EF1EE636fdea75fCA045876c2553Cd0e005?tab=contract"
+    },
+    {
+      "label": "Piku product details and redemption schedule",
+      "url": "https://piku.co/app/detail/CarryTradeUSDTRYLeverage"
+    },
+    {
+      "label": "Piku vault launch and Midas infrastructure",
+      "url": "https://piku.co/blog/introducing-morini-vaults-on-piku-finance"
+    },
+    {
+      "label": "Turkey public disclosure platform: DLN fund and ISIN",
+      "url": "https://kap.org.tr/en/fon-bilgileri/genel/dln-aura-portfoy-dolunay-serbest-fon"
+    }
+  ]
+}

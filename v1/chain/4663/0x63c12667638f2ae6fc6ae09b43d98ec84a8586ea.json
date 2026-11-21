@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "chainId": 4663,
+  "collateralAddress": "0x63c12667638f2ae6fc6ae09b43d98ec84a8586ea",
+  "symbol": "wsNET",
+  "name": "Wrapped Staked NET",
+  "type": "staking receipt",
+  "protocol": "NetNet Capital Management",
+  "protocolUrl": "https://defillama.com/rwa/asset/NET",
+  "rank": 1,
+  "decision": "blacklist",
+  "reason": "Unacceptable collateral exit risk: the observed unwind establishes a route but does not establish executable depth at liquidation size. Mapped NET AMM trades incur a 5% fee, and the documented treasury buyback is capacity-limited and can halt on stale pricing. Deployed wrapper permissions remain unverified. The exclusion is based on exit risk and evidence gaps.",
+  "redeem": "wsNET is a non-rebasing wrapper of rebasing sNET indexed to staked NET. A successful unwind at Robinhood block 29400787 burned about 0.295 wsNET, returned sNET, unstaked it for NET and sold NET for USDG, incurring a 5% NET transfer tax. NetNet documents a seller-initiated NET buyback at NAV less 1.5%, capped each 8-hour epoch at 1% of liquid treasury reserves and dependent on valid TWAP pricing.",
+  "notes": "Public RPC confirmed the wrapper's name, symbol and 18 decimals and the unwind receipt on 2026-11-21. The official registry identifies sNET 0xb773ec2c326b7f98a5a83fc098825492f020a4c7 and NET 0xca9c78dd337a67f6e0077f65f5e9218719d30edf. The three ERC-1967 slots were empty and common owner/paused getters reverted; source retrieval was blocked, so mint, pause and alternative upgrade controls remain unverified. NetNet documents a 1-of-1 fee-guardian Safe, treasury exposure to Morpho, and NAV that includes protocol-owned liquidity.",
+  "sources": [
+    {"label": "NetNet official chain and contract registry", "url": "https://docs.netnet.capital/official-channels"},
+    {"label": "Robinhood Chain mainnet RPC used for identity and receipt reads", "url": "https://rpc.mainnet.chain.robinhood.com"},
+    {"label": "NetNet staking and wrapper mechanism", "url": "https://docs.netnet.capital/mechanism"},
+    {"label": "Observed successful unwind on Robinhood Chain", "url": "https://robinhoodchain.blockscout.com/tx/0x36bd4ac3fea60305a8318dd21f44bb6a77c9a29660dab9df92ac42a266ed3559"},
+    {"label": "NetNet treasury and buyback terms", "url": "https://docs.netnet.capital/treasury"},
+    {"label": "NetNet risk factors and guardian", "url": "https://docs.netnet.capital/risks"},
+    {"label": "NetNet trading fee schedule", "url": "https://docs.netnet.capital/FEES.HTM"},
+    {"label": "NetNet credit facility", "url": "https://docs.netnet.capital/lending"}
+  ]
+}

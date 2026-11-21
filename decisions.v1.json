@@ -3,6 +3,13 @@
   "decisions": [
     {
       "chainId": 1,
+      "collateralAddress": "0x2bf11d2e04bc40daa95c24b8b90ec4f5c57dd326",
+      "decision": "blacklist",
+      "reason": "Insufficient credible evidence for a reliable collateral exit: the legal claim on fund assets, liquidator eligibility and enforceable redemption terms are unverified, while redemptions depend on offchain fund settlement and privileged operators; leveraged, unhedged TRY exposure and uncertain secondary liquidity compound liquidation risk. This is not a finding of fraud.",
+      "reviewPath": "v1/chain/1/0x2bf11d2e04bc40daa95c24b8b90ec4f5c57dd326.json"
+    },
+    {
+      "chainId": 1,
       "collateralAddress": "0x2f8bae126b8d416c009b82ccd60e4f9cabbd7702",
       "decision": "whitelist",
       "reason": "Positive identity/structure/exit assessment with material caveats: Ethereum token and registered redemption vault are matched by official sources and read-only calls. The euro-denominated Fasanara credit exposure and issuer-operated standard/capacity-limited instant redemption are documented. Approval does not imply guaranteed liquidity, principal protection or eligibility for every holder.",
@@ -28,6 +35,13 @@
       "decision": "blacklist",
       "reason": "Insufficient verified exit evidence for this Monad representation: PT redemption returns SY/Monad USDat, while issuer documentation specifies Ethereum redemption routes. A usable Monad-local or supported cross-chain issuer exit and the associated controls were not established. This is an evidence-based exclusion, not a finding of fraud.",
       "reviewPath": "v1/chain/143/0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147.json"
+    },
+    {
+      "chainId": 4663,
+      "collateralAddress": "0x63c12667638f2ae6fc6ae09b43d98ec84a8586ea",
+      "decision": "blacklist",
+      "reason": "Unacceptable collateral exit risk: the observed unwind establishes a route but does not establish executable depth at liquidation size. Mapped NET AMM trades incur a 5% fee, and the documented treasury buyback is capacity-limited and can halt on stale pricing. Deployed wrapper permissions remain unverified. The exclusion is based on exit risk and evidence gaps.",
+      "reviewPath": "v1/chain/4663/0x63c12667638f2ae6fc6ae09b43d98ec84a8586ea.json"
     }
   ]
 }
